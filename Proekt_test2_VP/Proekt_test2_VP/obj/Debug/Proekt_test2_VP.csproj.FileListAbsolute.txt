@@ -1,0 +1,10 @@
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
