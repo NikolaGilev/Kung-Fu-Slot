@@ -37,7 +37,7 @@ namespace Proekt_test2_VP
             this.creditLabel = new System.Windows.Forms.Label();
             this.BetLabel = new System.Windows.Forms.Label();
             this.WinLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SpinButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -50,6 +50,7 @@ namespace Proekt_test2_VP
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.BetAmountNumeric = new System.Windows.Forms.NumericUpDown();
             this.musicImage = new System.Windows.Forms.PictureBox();
+            this.FeatureButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -69,8 +70,8 @@ namespace Proekt_test2_VP
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(38, 58);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(91, 58);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(192, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -80,8 +81,8 @@ namespace Proekt_test2_VP
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(517, 58);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Location = new System.Drawing.Point(471, 58);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(192, 149);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -92,7 +93,7 @@ namespace Proekt_test2_VP
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Location = new System.Drawing.Point(281, 58);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(192, 149);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -129,26 +130,27 @@ namespace Proekt_test2_VP
             this.WinLabel.TabIndex = 6;
             this.WinLabel.Text = "Win: 0";
             // 
-            // button1
+            // SpinButton
             // 
-            this.button1.Location = new System.Drawing.Point(436, 613);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Spin";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SpinButton.Location = new System.Drawing.Point(436, 613);
+            this.SpinButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SpinButton.Name = "SpinButton";
+            this.SpinButton.Size = new System.Drawing.Size(100, 28);
+            this.SpinButton.TabIndex = 7;
+            this.SpinButton.Text = "Spin";
+            this.SpinButton.UseVisualStyleBackColor = true;
+            this.SpinButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer1
             // 
+            this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(753, 58);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox4.Location = new System.Drawing.Point(661, 58);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(192, 149);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -158,8 +160,8 @@ namespace Proekt_test2_VP
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(39, 235);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox5.Location = new System.Drawing.Point(91, 204);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(192, 149);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -169,8 +171,8 @@ namespace Proekt_test2_VP
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(281, 235);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox6.Location = new System.Drawing.Point(281, 204);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(192, 149);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,8 +182,8 @@ namespace Proekt_test2_VP
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Location = new System.Drawing.Point(517, 235);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Location = new System.Drawing.Point(471, 204);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(192, 149);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,8 +193,8 @@ namespace Proekt_test2_VP
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Location = new System.Drawing.Point(753, 235);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox8.Location = new System.Drawing.Point(661, 204);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(192, 149);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -202,8 +204,8 @@ namespace Proekt_test2_VP
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Location = new System.Drawing.Point(39, 414);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox9.Location = new System.Drawing.Point(91, 351);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(192, 149);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,8 +215,8 @@ namespace Proekt_test2_VP
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Location = new System.Drawing.Point(281, 414);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox10.Location = new System.Drawing.Point(281, 351);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(192, 149);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -224,8 +226,8 @@ namespace Proekt_test2_VP
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Location = new System.Drawing.Point(517, 425);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox11.Location = new System.Drawing.Point(471, 351);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(192, 149);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -235,8 +237,8 @@ namespace Proekt_test2_VP
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Location = new System.Drawing.Point(753, 414);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox12.Location = new System.Drawing.Point(661, 351);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(192, 149);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -246,6 +248,7 @@ namespace Proekt_test2_VP
             // BetAmountNumeric
             // 
             this.BetAmountNumeric.Location = new System.Drawing.Point(69, 613);
+            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BetAmountNumeric.Minimum = new decimal(new int[] {
             5,
             0,
@@ -265,12 +268,24 @@ namespace Proekt_test2_VP
             // 
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
             this.musicImage.Location = new System.Drawing.Point(845, 613);
+            this.musicImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.musicImage.Name = "musicImage";
-            this.musicImage.Size = new System.Drawing.Size(56, 40);
+            this.musicImage.Size = new System.Drawing.Size(56, 39);
             this.musicImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.musicImage.TabIndex = 18;
             this.musicImage.TabStop = false;
             this.musicImage.Click += new System.EventHandler(this.musicImage_Click);
+            // 
+            // FeatureButton
+            // 
+            this.FeatureButton.BackColor = System.Drawing.Color.Gold;
+            this.FeatureButton.Location = new System.Drawing.Point(37, 640);
+            this.FeatureButton.Name = "FeatureButton";
+            this.FeatureButton.Size = new System.Drawing.Size(123, 35);
+            this.FeatureButton.TabIndex = 19;
+            this.FeatureButton.Text = "BUY FEATURE";
+            this.FeatureButton.UseVisualStyleBackColor = false;
+            this.FeatureButton.Click += new System.EventHandler(this.FeatureButton_Click);
             // 
             // Form1
             // 
@@ -279,6 +294,7 @@ namespace Proekt_test2_VP
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 683);
+            this.Controls.Add(this.FeatureButton);
             this.Controls.Add(this.musicImage);
             this.Controls.Add(this.BetAmountNumeric);
             this.Controls.Add(this.pictureBox10);
@@ -290,16 +306,19 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SpinButton);
             this.Controls.Add(this.WinLabel);
             this.Controls.Add(this.BetLabel);
             this.Controls.Add(this.creditLabel);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "KungFuPandaSlot";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -328,7 +347,7 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.Label creditLabel;
         private System.Windows.Forms.Label BetLabel;
         private System.Windows.Forms.Label WinLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SpinButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -341,6 +360,7 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.NumericUpDown BetAmountNumeric;
         private System.Windows.Forms.PictureBox musicImage;
+        private System.Windows.Forms.Button FeatureButton;
     }
 }
 
