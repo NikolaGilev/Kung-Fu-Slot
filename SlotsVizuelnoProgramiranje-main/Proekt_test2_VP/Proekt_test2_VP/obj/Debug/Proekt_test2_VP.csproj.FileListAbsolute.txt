@@ -1,0 +1,72 @@
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\source\repos\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Interop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\AxInterop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.ResolveComReference.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Interop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.ResolveComReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Interop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\AxInterop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Interop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\AxInterop.WMPLib.dll
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.ResolveComReference.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
+D:\Desktop\SlotsVizuelnoProgramiranje-main (1)\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.BonusSpins.resources
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csprojAssemblyReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.ResolveComReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.BonusSpins.resources
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.GenerateResource.cache
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.csproj.CoreCompileInputs.cache
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\marko bonus slots edit\SlotsVizuelnoProgramiranje-main\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
