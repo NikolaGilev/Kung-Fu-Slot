@@ -30,14 +30,13 @@ namespace Proekt_test2_VP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.creditLabel = new System.Windows.Forms.Label();
             this.BetLabel = new System.Windows.Forms.Label();
             this.WinLabel = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SpinButton = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -50,6 +49,8 @@ namespace Proekt_test2_VP
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.BetAmountNumeric = new System.Windows.Forms.NumericUpDown();
             this.musicImage = new System.Windows.Forms.PictureBox();
+            this.FeatureButton = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -64,27 +65,30 @@ namespace Proekt_test2_VP
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetAmountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(28, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 47);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(144, 121);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "img";
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(388, 47);
+            this.pictureBox3.Location = new System.Drawing.Point(353, 47);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(144, 121);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Tag = "img";
             // 
             // pictureBox2
             // 
@@ -95,6 +99,7 @@ namespace Proekt_test2_VP
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Tag = "img";
             // 
             // creditLabel
             // 
@@ -123,15 +128,15 @@ namespace Proekt_test2_VP
             this.WinLabel.TabIndex = 6;
             this.WinLabel.Text = "Win: 0";
             // 
-            // button1
+            // SpinButton
             // 
-            this.button1.Location = new System.Drawing.Point(327, 498);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Spin";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.SpinButton.Location = new System.Drawing.Point(327, 498);
+            this.SpinButton.Name = "SpinButton";
+            this.SpinButton.Size = new System.Drawing.Size(75, 23);
+            this.SpinButton.TabIndex = 7;
+            this.SpinButton.Text = "Spin";
+            this.SpinButton.UseVisualStyleBackColor = true;
+            this.SpinButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // timer1
             // 
@@ -141,92 +146,101 @@ namespace Proekt_test2_VP
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(565, 47);
+            this.pictureBox4.Location = new System.Drawing.Point(496, 47);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(144, 121);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 10;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Tag = "img";
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(29, 191);
+            this.pictureBox5.Location = new System.Drawing.Point(68, 166);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(144, 121);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 9;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Tag = "img";
             // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(211, 191);
+            this.pictureBox6.Location = new System.Drawing.Point(211, 166);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(144, 121);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 8;
             this.pictureBox6.TabStop = false;
+            this.pictureBox6.Tag = "img";
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Location = new System.Drawing.Point(388, 191);
+            this.pictureBox7.Location = new System.Drawing.Point(353, 166);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(144, 121);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 13;
             this.pictureBox7.TabStop = false;
+            this.pictureBox7.Tag = "img";
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Location = new System.Drawing.Point(565, 191);
+            this.pictureBox8.Location = new System.Drawing.Point(496, 166);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(144, 121);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 12;
             this.pictureBox8.TabStop = false;
+            this.pictureBox8.Tag = "img";
             // 
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Location = new System.Drawing.Point(29, 336);
+            this.pictureBox9.Location = new System.Drawing.Point(68, 285);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(144, 121);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 11;
             this.pictureBox9.TabStop = false;
+            this.pictureBox9.Tag = "img";
             // 
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Location = new System.Drawing.Point(211, 336);
+            this.pictureBox10.Location = new System.Drawing.Point(211, 285);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(144, 121);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 16;
             this.pictureBox10.TabStop = false;
+            this.pictureBox10.Tag = "img";
             // 
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Location = new System.Drawing.Point(388, 345);
+            this.pictureBox11.Location = new System.Drawing.Point(353, 285);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(144, 121);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 15;
             this.pictureBox11.TabStop = false;
+            this.pictureBox11.Tag = "img";
             // 
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Location = new System.Drawing.Point(565, 336);
+            this.pictureBox12.Location = new System.Drawing.Point(496, 285);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(144, 121);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 14;
             this.pictureBox12.TabStop = false;
+            this.pictureBox12.Tag = "img";
             // 
             // BetAmountNumeric
             // 
@@ -250,7 +264,7 @@ namespace Proekt_test2_VP
             // musicImage
             // 
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
-            this.musicImage.Location = new System.Drawing.Point(634, 498);
+            this.musicImage.Location = new System.Drawing.Point(680, 498);
             this.musicImage.Margin = new System.Windows.Forms.Padding(2);
             this.musicImage.Name = "musicImage";
             this.musicImage.Size = new System.Drawing.Size(42, 32);
@@ -258,14 +272,44 @@ namespace Proekt_test2_VP
             this.musicImage.TabIndex = 18;
             this.musicImage.TabStop = false;
             this.musicImage.Click += new System.EventHandler(this.musicImage_Click);
+            this.musicImage.MouseHover += new System.EventHandler(this.musicImage_MouseHover);
+            // 
+            // FeatureButton
+            // 
+            this.FeatureButton.BackColor = System.Drawing.Color.Gold;
+            this.FeatureButton.Location = new System.Drawing.Point(28, 520);
+            this.FeatureButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FeatureButton.Name = "FeatureButton";
+            this.FeatureButton.Size = new System.Drawing.Size(92, 28);
+            this.FeatureButton.TabIndex = 19;
+            this.FeatureButton.Text = "BUY FEATURE";
+            this.FeatureButton.UseVisualStyleBackColor = false;
+            this.FeatureButton.Click += new System.EventHandler(this.FeatureButton_Click);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.trackBar1.BackColor = System.Drawing.Color.White;
+            this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.trackBar1.Location = new System.Drawing.Point(680, 395);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.trackBar1.Size = new System.Drawing.Size(45, 104);
+            this.trackBar1.TabIndex = 20;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBar1.Visible = false;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Proekt_test2_VP.Properties.Resources.Panda_Palace;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(747, 555);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.FeatureButton);
             this.Controls.Add(this.musicImage);
             this.Controls.Add(this.BetAmountNumeric);
             this.Controls.Add(this.pictureBox10);
@@ -277,7 +321,7 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.SpinButton);
             this.Controls.Add(this.WinLabel);
             this.Controls.Add(this.BetLabel);
             this.Controls.Add(this.creditLabel);
@@ -290,6 +334,8 @@ namespace Proekt_test2_VP
             this.Name = "Form1";
             this.Text = "KungFuPandaSlot";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -304,6 +350,7 @@ namespace Proekt_test2_VP
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetAmountNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -317,7 +364,7 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.Label creditLabel;
         private System.Windows.Forms.Label BetLabel;
         private System.Windows.Forms.Label WinLabel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SpinButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -330,6 +377,8 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.NumericUpDown BetAmountNumeric;
         private System.Windows.Forms.PictureBox musicImage;
+        private System.Windows.Forms.Button FeatureButton;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
