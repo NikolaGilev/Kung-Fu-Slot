@@ -15,16 +15,22 @@ namespace Proekt_test2_VP
     {
         WindowsMediaPlayer musicPlayer = new WindowsMediaPlayer();
         PlayerClass player;
+        public List<PictureBox> PictureBoxes { get; set; }
         public BonusSpins(PlayerClass Player)
         {
             InitializeComponent();
             Randomizer Randomizer = new Randomizer();
             DoubleBuffered = true;
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             musicImage.Image = Image.FromFile("mute.png");
             musicImage.Tag = "mute.png";
             player = Player;
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             FreeSpinsLabel.Text = "Free spins left: " + player.SpinsLeft.ToString();
+            BetAmountNumeric.Value = Convert.ToDecimal(player.Bet);
+            PictureBoxes = new List<PictureBox> { pictureBox1, pictureBox2, pictureBox3, pictureBox4,
+                                                pictureBox5, pictureBox6, pictureBox7, pictureBox8,
+                                                pictureBox9, pictureBox10, pictureBox11, pictureBox12};
 
         }
 
@@ -33,33 +39,27 @@ namespace Proekt_test2_VP
 
         private void BonusSpins_Load(object sender, EventArgs e)
         {
-            pictureBox1.Image = Image.FromFile("Pictures/1.png");
-            pictureBox2.Image = Image.FromFile("Pictures/2.png");
-            pictureBox3.Image = Image.FromFile("Pictures/3.png");
-            pictureBox4.Image = Image.FromFile("Pictures/1.png");
+            foreach (PictureBox pb in PictureBoxes)
+            {
+                pb.Image = Image.FromFile("Pictures/" + Randomizer.getRand(1, 9).ToString() + ".png");
+            }
 
-            pictureBox5.Image = Image.FromFile("Pictures/2.png");
-            pictureBox6.Image = Image.FromFile("Pictures/3.png");
-            pictureBox7.Image = Image.FromFile("Pictures/1.png");
-            pictureBox8.Image = Image.FromFile("Pictures/2.png");
-
-            pictureBox9.Image = Image.FromFile("Pictures/3.png");
-            pictureBox10.Image = Image.FromFile("Pictures/1.png");
-            pictureBox11.Image = Image.FromFile("Pictures/2.png");
-            pictureBox12.Image = Image.FromFile("Pictures/3.png");
+            creditLabel.Text = "Credits: " + player.Credits.ToString();
+            FreeSpinsLabel.Text = "Free spins left: " + player.SpinsLeft.ToString();
         }
 
         private void SpinButton_Click(object sender, EventArgs e)
         {
-            if (player.Credits >= player.Bet || timer1.Enabled)
-            {
                 if (timer1.Enabled)
                 {
+                    SpinButton.Text = "Spin";
                     timer1.Stop();
                     Pay();
                 }
                 else if(player.SpinsLeft>0)
                 {
+
+                    SpinButton.Text = "Stop";
                     creditLabel.Text = "Credits: " + player.Credits.ToString();
                     timer1.Start();
                     player.SpinsLeft--;
@@ -67,6 +67,7 @@ namespace Proekt_test2_VP
                 }
                 else
                 {
+                    SpinButton.Text = "Spin";
                     Form1 form = new Form1();
                     form.player.Credits = player.Credits;
                     form.player.Bet = player.Bet;
@@ -77,8 +78,6 @@ namespace Proekt_test2_VP
                 }
 
                 player.Total = 0;
-
-            }
         }
 
         private void Pay()
@@ -136,62 +135,115 @@ namespace Proekt_test2_VP
             if (p[3] == p[6] & p[9] == p[4] & p[6] == p[9] & p[3] != 5)
                 player.getZigZag(p[3]);
 
+            // check if 3 scrolls are present...
+            couter = 0;
+            for (int i = 0; i < 12; i++)
+            {
+                if (p[i] == 8)
+                {
+                    couter++;
+                }
+            }
+            // 2te podole treba da se skrojat vo posebna fkcija
+            if (couter == 3) // recieve 10 spins
+            {
+
+                player.SpinsLeft += 10;
+            }
+            if (couter == 4) // recieve 15 spins
+            {
+                player.SpinsLeft += 15;
+            }
+
             player.getCredit();
 
 
             WinLabel.Text = "Win: " + player.Total.ToString();
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             BetLabel.Text = "Bet: " + player.Bet.ToString();
+            FreeSpinsLabel.Text = "Free spins left: " + player.SpinsLeft.ToString();
         }
 
         private void Rolling()
         {
             for (int i = 0; i < 12; i++)
             {
-                p[i] = Randomizer.getRand(1, 6);
+                p[i] = Randomizer.getRand(0, 100);
 
+                p[i] = Rigged_lol(p[i]);
+
+                // ova e proverka da nema poveke od eden scroll vo ista kolona
                 if (i >= 4)
                 {
-                    if (p[i] == p[i - 4] & p[i] == 5)
+                    if (p[i] == p[i - 4] & p[i] == 8)
                     {
-                        p[i] = Randomizer.getRand(1, 5);
+                        p[i] = Randomizer.getRand(0, 90);
+                        p[i] = Rigged_lol(p[i]);
                     }
                     if (i >= 8)
                     {
-                        if (p[i] == p[i - 8] & p[i] == 5)
+                        if (p[i] == p[i - 8] & p[i] == 8)
                         {
-                            p[i] = Randomizer.getRand(1, 5);
+                            p[i] = Randomizer.getRand(0, 90);
+                            p[i] = Rigged_lol(p[i]);
                         }
                     }
                 }
+
+            }
+            int t = 0;
+            foreach (PictureBox pb in PictureBoxes)
+            {
+                if (pb.Image != null) pb.Image.Dispose();
+                pb.Image = Image.FromFile("Pictures/" + p[t].ToString() + ".png");
+                t++;
             }
 
-            if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
-            pictureBox1.Image = Image.FromFile("Pictures/" + p[0].ToString() + ".png");
-            if (pictureBox2.Image != null) pictureBox2.Image.Dispose();
-            pictureBox2.Image = Image.FromFile("Pictures/" + p[1].ToString() + ".png");
-            if (pictureBox3.Image != null) pictureBox3.Image.Dispose();
-            pictureBox3.Image = Image.FromFile("Pictures/" + p[2].ToString() + ".png");
-            if (pictureBox4.Image != null) pictureBox4.Image.Dispose();
-            pictureBox4.Image = Image.FromFile("Pictures/" + p[3].ToString() + ".png");
-
-            if (pictureBox5.Image != null) pictureBox5.Image.Dispose();
-            pictureBox5.Image = Image.FromFile("Pictures/" + p[4].ToString() + ".png");
-            if (pictureBox6.Image != null) pictureBox6.Image.Dispose();
-            pictureBox6.Image = Image.FromFile("Pictures/" + p[5].ToString() + ".png");
-            if (pictureBox7.Image != null) pictureBox7.Image.Dispose();
-            pictureBox7.Image = Image.FromFile("Pictures/" + p[6].ToString() + ".png");
-            if (pictureBox8.Image != null) pictureBox8.Image.Dispose();
-            pictureBox8.Image = Image.FromFile("Pictures/" + p[7].ToString() + ".png");
-
-            if (pictureBox9.Image != null) pictureBox9.Image.Dispose();
-            pictureBox9.Image = Image.FromFile("Pictures/" + p[8].ToString() + ".png");
-            if (pictureBox10.Image != null) pictureBox10.Image.Dispose();
-            pictureBox10.Image = Image.FromFile("Pictures/" + p[9].ToString() + ".png");
-            if (pictureBox11.Image != null) pictureBox11.Image.Dispose();
-            pictureBox11.Image = Image.FromFile("Pictures/" + p[10].ToString() + ".png");
-            if (pictureBox12.Image != null) pictureBox12.Image.Dispose();
-            pictureBox12.Image = Image.FromFile("Pictures/" + p[11].ToString() + ".png");
+        }
+        public int Rigged_lol(int i)
+        {
+            // Total: 9 images...
+            // 10% chance to get 1.png
+            if (i < 10)
+            {
+                i = 1;
+            }
+            // 10% chance to get 2.png
+            else if (i < 20)
+            {
+                i = 2;
+            }
+            // 15% chance to get 3.png
+            else if (i < 35)
+            {
+                i = 3;
+            }
+            // 15% chance to get 4.png
+            else if (i < 50)
+            {
+                i = 4;
+            }
+            // 15% chance to get 5.png
+            else if (i < 65)
+            {
+                i = 5;
+            }
+            // 15% chance to get 6.png
+            else if (i < 80)
+            {
+                i = 6;
+            }
+            // 10% chance to get 7.png
+            else if (i < 90)
+            {
+                i = 7;
+            }
+            // 10% chance to get 8.png
+            else if (i < 100)
+            {
+                i = 8;
+            }
+            return i;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -217,20 +269,25 @@ namespace Proekt_test2_VP
             {
                 musicImage.Image = Image.FromFile("mute.png");
                 musicImage.Tag = "mute.png";
-                musicPlayer.controls.stop();
+                musicPlayer.controls.pause();
             }
+            musicPlayer.settings.volume = trackBar1.Value * 10;
         }
 
-        private void BetAmountNumeric_ValueChanged_1(object sender, EventArgs e)
+        private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            if (BetAmountNumeric.Value > Convert.ToInt32(player.Credits))
-            {
-                BetAmountNumeric.Value = Convert.ToInt32(player.Credits);
-            }
-            if (BetAmountNumeric.Value >= 5)
-            {
-                player.Bet = Convert.ToInt64(BetAmountNumeric.Value);
-            }
+            musicPlayer.settings.volume = trackBar1.Value * 10;
+        }
+
+        private void musicImage_MouseHover(object sender, EventArgs e)
+        {
+            if (musicImage.Tag.Equals("unmute.png"))
+                trackBar1.Visible = true;
+        }
+
+        private void BonusSpins_MouseEnter(object sender, EventArgs e)
+        {
+            trackBar1.Visible = false;
         }
     }
 }

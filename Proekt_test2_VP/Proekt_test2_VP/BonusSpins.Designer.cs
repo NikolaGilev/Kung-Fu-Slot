@@ -30,7 +30,6 @@ namespace Proekt_test2_VP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BonusSpins));
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
@@ -51,6 +50,7 @@ namespace Proekt_test2_VP
             this.musicImage = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.FreeSpinsLabel = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
@@ -65,6 +65,7 @@ namespace Proekt_test2_VP
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetAmountNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox10
@@ -202,32 +203,38 @@ namespace Proekt_test2_VP
             // WinLabel
             // 
             this.WinLabel.AutoSize = true;
-            this.WinLabel.Location = new System.Drawing.Point(530, 30);
+            this.WinLabel.BackColor = System.Drawing.Color.Transparent;
+            this.WinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.WinLabel.Location = new System.Drawing.Point(412, 30);
             this.WinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WinLabel.Name = "WinLabel";
-            this.WinLabel.Size = new System.Drawing.Size(48, 17);
+            this.WinLabel.Size = new System.Drawing.Size(85, 29);
             this.WinLabel.TabIndex = 30;
             this.WinLabel.Text = "Win: 0";
             // 
             // creditLabel
             // 
             this.creditLabel.AutoSize = true;
+            this.creditLabel.BackColor = System.Drawing.Color.Transparent;
+            this.creditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.creditLabel.Location = new System.Drawing.Point(30, 30);
             this.creditLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.creditLabel.Name = "creditLabel";
-            this.creditLabel.Size = new System.Drawing.Size(84, 17);
+            this.creditLabel.Size = new System.Drawing.Size(149, 29);
             this.creditLabel.TabIndex = 29;
             this.creditLabel.Text = "Credits: 100";
             // 
             // BetAmountNumeric
             // 
+            this.BetAmountNumeric.DecimalPlaces = 1;
+            this.BetAmountNumeric.Enabled = false;
             this.BetAmountNumeric.Location = new System.Drawing.Point(76, 608);
             this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BetAmountNumeric.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
-            0});
+            65536});
             this.BetAmountNumeric.Name = "BetAmountNumeric";
             this.BetAmountNumeric.ReadOnly = true;
             this.BetAmountNumeric.Size = new System.Drawing.Size(91, 22);
@@ -237,7 +244,6 @@ namespace Proekt_test2_VP
             0,
             0,
             0});
-            this.BetAmountNumeric.ValueChanged += new System.EventHandler(this.BetAmountNumeric_ValueChanged_1);
             // 
             // BetLabel
             // 
@@ -263,7 +269,7 @@ namespace Proekt_test2_VP
             // musicImage
             // 
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
-            this.musicImage.Location = new System.Drawing.Point(859, 604);
+            this.musicImage.Location = new System.Drawing.Point(915, 593);
             this.musicImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.musicImage.Name = "musicImage";
             this.musicImage.Size = new System.Drawing.Size(56, 39);
@@ -271,6 +277,7 @@ namespace Proekt_test2_VP
             this.musicImage.TabIndex = 34;
             this.musicImage.TabStop = false;
             this.musicImage.Click += new System.EventHandler(this.musicImage_Click_1);
+            this.musicImage.MouseHover += new System.EventHandler(this.musicImage_MouseHover);
             // 
             // timer1
             // 
@@ -279,19 +286,38 @@ namespace Proekt_test2_VP
             // FreeSpinsLabel
             // 
             this.FreeSpinsLabel.AutoSize = true;
-            this.FreeSpinsLabel.Location = new System.Drawing.Point(768, 30);
+            this.FreeSpinsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FreeSpinsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.FreeSpinsLabel.Location = new System.Drawing.Point(678, 30);
             this.FreeSpinsLabel.Name = "FreeSpinsLabel";
-            this.FreeSpinsLabel.Size = new System.Drawing.Size(121, 17);
+            this.FreeSpinsLabel.Size = new System.Drawing.Size(214, 29);
             this.FreeSpinsLabel.TabIndex = 35;
             this.FreeSpinsLabel.Text = "Free spins left: 10";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.trackBar1.BackColor = System.Drawing.Color.White;
+            this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.trackBar1.Location = new System.Drawing.Point(915, 464);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.trackBar1.Size = new System.Drawing.Size(56, 128);
+            this.trackBar1.TabIndex = 36;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBar1.Visible = false;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // BonusSpins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Proekt_test2_VP.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 683);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.FreeSpinsLabel);
             this.Controls.Add(this.musicImage);
             this.Controls.Add(this.SpinButton);
@@ -317,6 +343,7 @@ namespace Proekt_test2_VP
             this.Name = "BonusSpins";
             this.Text = "BonusSpins";
             this.Load += new System.EventHandler(this.BonusSpins_Load);
+            this.MouseEnter += new System.EventHandler(this.BonusSpins_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -331,6 +358,7 @@ namespace Proekt_test2_VP
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BetAmountNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.musicImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -358,5 +386,6 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.PictureBox musicImage;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label FreeSpinsLabel;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }

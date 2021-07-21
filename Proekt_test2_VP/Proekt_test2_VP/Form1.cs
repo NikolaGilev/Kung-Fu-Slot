@@ -26,6 +26,7 @@ namespace Proekt_test2_VP
             InitializeComponent();
             Randomizer Randomizer = new Randomizer();
             DoubleBuffered = true;
+            this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             musicImage.Image = Image.FromFile("mute.png");
             musicImage.Tag = "mute.png";
             creditLabel.Text = "Credits: " + player.Credits.ToString();
@@ -45,6 +46,7 @@ namespace Proekt_test2_VP
             }
 
             creditLabel.Text = "Credits: " + player.Credits.ToString();
+            BetAmountNumeric.Value = Convert.ToDecimal(player.Bet);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -192,20 +194,22 @@ namespace Proekt_test2_VP
             if (couter == 3) // recieve 10 spins
             {
                 
-                player.SpinsLeft = 10;
+                player.SpinsLeft += 10;
+                //MessageBox.Show("You've Won 10 Free Spins!", "Congratulations!", MessageBoxButtons.OK);
                 musicPlayer.controls.pause();
-                BonusSpins newBonusSpins = new BonusSpins(player);
+                Scroll newScroll = new Scroll(player);
                 this.Hide();
-                newBonusSpins.ShowDialog();
+                newScroll.ShowDialog();
                 this.Close();
             }
             if(couter == 4) // recieve 15 spins
             {
-                player.SpinsLeft = 15;
+                player.SpinsLeft += 15;
+                //MessageBox.Show("You've Won 15 Free Spins!", "Congratulations!", MessageBoxButtons.OK);
                 musicPlayer.controls.pause();
-                BonusSpins newBonusSpins = new BonusSpins(player);
+                Scroll newScroll = new Scroll(player);
                 this.Hide();
-                newBonusSpins.ShowDialog();
+                newScroll.ShowDialog();
                 this.Close();
             }
 
@@ -215,7 +219,23 @@ namespace Proekt_test2_VP
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             BetLabel.Text = "Bet: " + player.Bet.ToString();
 
-            Invalidate(true);
+            WonBoxes(winningBoxes);
+        }
+        public void WonBoxes(List<PictureBox> won)
+        {
+            foreach (PictureBox pb in won)
+            {
+                pb.BackColor = Color.Yellow;
+                pb.BorderStyle = BorderStyle.FixedSingle;
+            }
+        }
+        public void WonBoxesToNormal(List<PictureBox> won)
+        {
+            foreach (PictureBox pb in won)
+            {
+                pb.BackColor = Color.Transparent;
+                pb.BorderStyle = BorderStyle.None;
+            }
         }
 
         public int Rigged_lol(int i)
@@ -312,16 +332,23 @@ namespace Proekt_test2_VP
         }
 
         private void BetAmountNumeric_ValueChanged(object sender, EventArgs e)
-        {
-            if (BetAmountNumeric.Value > Convert.ToInt32(player.Credits))
+        { 
+            if (Convert.ToDouble(BetAmountNumeric.Value) > Convert.ToDouble(player.Credits))
             {
-                BetAmountNumeric.Value = Convert.ToInt32(player.Credits);
+                BetAmountNumeric.Value = Convert.ToDecimal(player.Credits);
             }
-            if (BetAmountNumeric.Value >= 5)
+            if (BetAmountNumeric.Value >= 1)
             {
-                player.Bet = Convert.ToInt64(BetAmountNumeric.Value);
+                player.Bet = Convert.ToDouble(BetAmountNumeric.Value);
             }
-
+            if ((Convert.ToDouble(BetAmountNumeric.Value)*100 <= player.Credits) && player.Credits > 0 && Convert.ToDouble(BetAmountNumeric.Value) != 0)
+            {
+                FeatureButton.Enabled = true;
+            }
+            else 
+            {
+                FeatureButton.Enabled = false;
+            }
         }
 
 
@@ -347,11 +374,11 @@ namespace Proekt_test2_VP
 
         private void FeatureButton_Click(object sender, EventArgs e)
         {
-            player.SpinsLeft = 10;
+            player.BuyFeature();
             musicPlayer.controls.pause();
-            BonusSpins newBonusSpins = new BonusSpins(player);
+            Scroll newScroll = new Scroll(player);
             this.Hide();
-            newBonusSpins.ShowDialog();
+            newScroll.ShowDialog();
             this.Close();
         }
 
@@ -362,6 +389,7 @@ namespace Proekt_test2_VP
 
         private void musicImage_MouseHover(object sender, EventArgs e)
         {
+            if(musicImage.Tag.Equals("unmute.png"))
             trackBar1.Visible = true;
         }
 
@@ -370,6 +398,27 @@ namespace Proekt_test2_VP
             trackBar1.Visible = false;
         }
 
-        
+        private void SpinButton_Click(object sender, EventArgs e)
+        {
+            if (player.Credits >= player.Bet || timer1.Enabled)
+            {
+                if (timer1.Enabled)
+                {
+                    SpinButton.Text = "Spin";
+                    timer1.Stop();
+                    Pay();
+                }
+                else
+                {
+                    WonBoxesToNormal(winningBoxes);
+                    winningBoxes.Clear();
+                    SpinButton.Text = "Stop";
+                    player.Spin();
+                    creditLabel.Text = "Credits: " + player.Credits.ToString();
+                    timer1.Start();
+                }
+                player.Total = 0;
+            }
+        }
     }
 }
