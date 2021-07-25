@@ -9,15 +9,17 @@ namespace Proekt_test2_VP
     public class PlayerClass
     {
         public double Credits { get; set; }
-        public long Bet { get; set; }
+        public double Bet { get; set; }
         public double Total { get; set; }
         public int SpinsLeft { get; set; }
+        public int BonusPicture { get; set; }
         public PlayerClass()
         {
             Credits = 100;
             Bet = 5;
             Total = 0;
             SpinsLeft = 0;
+            BonusPicture = 0;
         }
 
         public void getConnected3(int Picture)
@@ -82,9 +84,10 @@ namespace Proekt_test2_VP
             Credits = Credits - Bet;
         }
 
-        public void BonusSpin()
+        public void BuyFeature()
         {
-
+            Credits = Credits - Bet * 100;
+            SpinsLeft += 10;
         }
     }
 }

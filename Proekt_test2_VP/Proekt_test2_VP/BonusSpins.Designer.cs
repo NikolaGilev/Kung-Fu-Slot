@@ -71,9 +71,10 @@ namespace Proekt_test2_VP
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox10.Location = new System.Drawing.Point(240, 314);
+            this.pictureBox10.Location = new System.Drawing.Point(320, 386);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox10.Size = new System.Drawing.Size(192, 149);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox10.TabIndex = 28;
             this.pictureBox10.TabStop = false;
@@ -81,9 +82,10 @@ namespace Proekt_test2_VP
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox11.Location = new System.Drawing.Point(382, 314);
+            this.pictureBox11.Location = new System.Drawing.Point(510, 386);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox11.Size = new System.Drawing.Size(192, 149);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox11.TabIndex = 27;
             this.pictureBox11.TabStop = false;
@@ -91,9 +93,10 @@ namespace Proekt_test2_VP
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox12.Location = new System.Drawing.Point(525, 314);
+            this.pictureBox12.Location = new System.Drawing.Point(700, 386);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox12.Size = new System.Drawing.Size(192, 149);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox12.TabIndex = 26;
             this.pictureBox12.TabStop = false;
@@ -101,9 +104,10 @@ namespace Proekt_test2_VP
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox7.Location = new System.Drawing.Point(382, 194);
+            this.pictureBox7.Location = new System.Drawing.Point(510, 239);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox7.Size = new System.Drawing.Size(192, 149);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 25;
             this.pictureBox7.TabStop = false;
@@ -111,9 +115,10 @@ namespace Proekt_test2_VP
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.Location = new System.Drawing.Point(525, 194);
+            this.pictureBox8.Location = new System.Drawing.Point(700, 239);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox8.Size = new System.Drawing.Size(192, 149);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 24;
             this.pictureBox8.TabStop = false;
@@ -121,9 +126,10 @@ namespace Proekt_test2_VP
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.Location = new System.Drawing.Point(98, 314);
+            this.pictureBox9.Location = new System.Drawing.Point(130, 386);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox9.Size = new System.Drawing.Size(192, 149);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox9.TabIndex = 23;
             this.pictureBox9.TabStop = false;
@@ -131,9 +137,10 @@ namespace Proekt_test2_VP
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.Location = new System.Drawing.Point(525, 76);
+            this.pictureBox4.Location = new System.Drawing.Point(700, 93);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox4.Size = new System.Drawing.Size(192, 149);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 22;
             this.pictureBox4.TabStop = false;
@@ -141,9 +148,10 @@ namespace Proekt_test2_VP
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(98, 194);
+            this.pictureBox5.Location = new System.Drawing.Point(130, 239);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox5.Size = new System.Drawing.Size(192, 149);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox5.TabIndex = 21;
             this.pictureBox5.TabStop = false;
@@ -151,9 +159,10 @@ namespace Proekt_test2_VP
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.Location = new System.Drawing.Point(240, 194);
+            this.pictureBox6.Location = new System.Drawing.Point(320, 239);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox6.Size = new System.Drawing.Size(192, 149);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox6.TabIndex = 20;
             this.pictureBox6.TabStop = false;
@@ -161,9 +170,10 @@ namespace Proekt_test2_VP
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Location = new System.Drawing.Point(240, 76);
+            this.pictureBox2.Location = new System.Drawing.Point(320, 93);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox2.Size = new System.Drawing.Size(192, 149);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
@@ -171,9 +181,10 @@ namespace Proekt_test2_VP
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Location = new System.Drawing.Point(382, 76);
+            this.pictureBox3.Location = new System.Drawing.Point(510, 93);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox3.Size = new System.Drawing.Size(192, 149);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
@@ -181,9 +192,10 @@ namespace Proekt_test2_VP
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Location = new System.Drawing.Point(98, 76);
+            this.pictureBox1.Location = new System.Drawing.Point(130, 93);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 121);
+            this.pictureBox1.Size = new System.Drawing.Size(192, 149);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -191,55 +203,64 @@ namespace Proekt_test2_VP
             // WinLabel
             // 
             this.WinLabel.AutoSize = true;
-            this.WinLabel.Location = new System.Drawing.Point(398, 24);
+            this.WinLabel.BackColor = System.Drawing.Color.Transparent;
+            this.WinLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.WinLabel.Location = new System.Drawing.Point(412, 30);
+            this.WinLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.WinLabel.Name = "WinLabel";
-            this.WinLabel.Size = new System.Drawing.Size(38, 13);
+            this.WinLabel.Size = new System.Drawing.Size(85, 29);
             this.WinLabel.TabIndex = 30;
             this.WinLabel.Text = "Win: 0";
             // 
             // creditLabel
             // 
             this.creditLabel.AutoSize = true;
-            this.creditLabel.Location = new System.Drawing.Point(22, 24);
+            this.creditLabel.BackColor = System.Drawing.Color.Transparent;
+            this.creditLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.creditLabel.Location = new System.Drawing.Point(30, 30);
+            this.creditLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.creditLabel.Name = "creditLabel";
-            this.creditLabel.Size = new System.Drawing.Size(63, 13);
+            this.creditLabel.Size = new System.Drawing.Size(149, 29);
             this.creditLabel.TabIndex = 29;
             this.creditLabel.Text = "Credits: 100";
             // 
             // BetAmountNumeric
             // 
-            this.BetAmountNumeric.Location = new System.Drawing.Point(57, 494);
-            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.BetAmountNumeric.DecimalPlaces = 1;
+            this.BetAmountNumeric.Enabled = false;
+            this.BetAmountNumeric.Location = new System.Drawing.Point(76, 608);
+            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BetAmountNumeric.Minimum = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
-            0});
+            65536});
             this.BetAmountNumeric.Name = "BetAmountNumeric";
             this.BetAmountNumeric.ReadOnly = true;
-            this.BetAmountNumeric.Size = new System.Drawing.Size(68, 20);
+            this.BetAmountNumeric.Size = new System.Drawing.Size(91, 22);
             this.BetAmountNumeric.TabIndex = 32;
             this.BetAmountNumeric.Value = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.BetAmountNumeric.ValueChanged += new System.EventHandler(this.BetAmountNumeric_ValueChanged_1);
             // 
             // BetLabel
             // 
             this.BetLabel.AutoSize = true;
-            this.BetLabel.Location = new System.Drawing.Point(32, 496);
+            this.BetLabel.Location = new System.Drawing.Point(43, 610);
+            this.BetLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.BetLabel.Name = "BetLabel";
-            this.BetLabel.Size = new System.Drawing.Size(29, 13);
+            this.BetLabel.Size = new System.Drawing.Size(37, 17);
             this.BetLabel.TabIndex = 31;
             this.BetLabel.Text = "Bet: ";
             // 
             // SpinButton
             // 
-            this.SpinButton.Location = new System.Drawing.Point(324, 491);
+            this.SpinButton.Location = new System.Drawing.Point(432, 604);
+            this.SpinButton.Margin = new System.Windows.Forms.Padding(4);
             this.SpinButton.Name = "SpinButton";
-            this.SpinButton.Size = new System.Drawing.Size(75, 23);
+            this.SpinButton.Size = new System.Drawing.Size(100, 28);
             this.SpinButton.TabIndex = 33;
             this.SpinButton.Text = "Spin";
             this.SpinButton.UseVisualStyleBackColor = true;
@@ -248,10 +269,10 @@ namespace Proekt_test2_VP
             // musicImage
             // 
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
-            this.musicImage.Location = new System.Drawing.Point(690, 491);
-            this.musicImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.musicImage.Location = new System.Drawing.Point(915, 593);
+            this.musicImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.musicImage.Name = "musicImage";
-            this.musicImage.Size = new System.Drawing.Size(42, 32);
+            this.musicImage.Size = new System.Drawing.Size(56, 39);
             this.musicImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.musicImage.TabIndex = 34;
             this.musicImage.TabStop = false;
@@ -265,10 +286,11 @@ namespace Proekt_test2_VP
             // FreeSpinsLabel
             // 
             this.FreeSpinsLabel.AutoSize = true;
-            this.FreeSpinsLabel.Location = new System.Drawing.Point(576, 24);
-            this.FreeSpinsLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.FreeSpinsLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FreeSpinsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.FreeSpinsLabel.Location = new System.Drawing.Point(678, 30);
             this.FreeSpinsLabel.Name = "FreeSpinsLabel";
-            this.FreeSpinsLabel.Size = new System.Drawing.Size(90, 13);
+            this.FreeSpinsLabel.Size = new System.Drawing.Size(214, 29);
             this.FreeSpinsLabel.TabIndex = 35;
             this.FreeSpinsLabel.Text = "Free spins left: 10";
             // 
@@ -277,11 +299,12 @@ namespace Proekt_test2_VP
             this.trackBar1.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.trackBar1.BackColor = System.Drawing.Color.White;
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.trackBar1.Location = new System.Drawing.Point(690, 388);
+            this.trackBar1.Location = new System.Drawing.Point(915, 464);
+            this.trackBar1.Margin = new System.Windows.Forms.Padding(4);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.trackBar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.trackBar1.Size = new System.Drawing.Size(45, 104);
+            this.trackBar1.Size = new System.Drawing.Size(56, 128);
             this.trackBar1.TabIndex = 36;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar1.Visible = false;
@@ -289,11 +312,11 @@ namespace Proekt_test2_VP
             // 
             // BonusSpins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Proekt_test2_VP.Properties.Resources.background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(747, 555);
+            this.ClientSize = new System.Drawing.Size(996, 683);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.FreeSpinsLabel);
             this.Controls.Add(this.musicImage);
@@ -315,13 +338,12 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BonusSpins";
             this.Text = "BonusSpins";
             this.Load += new System.EventHandler(this.BonusSpins_Load);
-            this.MouseHover += new System.EventHandler(this.BonusSpins_MouseHover);
+            this.MouseEnter += new System.EventHandler(this.BonusSpins_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
