@@ -14,6 +14,8 @@ namespace Proekt_test2_VP
     {
         int Timer = 0;
         PlayerClass player;
+        Randomizer random = new Randomizer();
+
         public Scroll(PlayerClass Player)
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace Proekt_test2_VP
             if(Timer < 4)
             {
                 Timer++;
-                player.BonusPicture = Randomizer.getRand(9, 15);
+                player.BonusPicture = random.getRand(9, 15);
                 pictureBox1.Image = Image.FromFile("Pictures/" + player.BonusPicture.ToString() + ".png");
             }
             else

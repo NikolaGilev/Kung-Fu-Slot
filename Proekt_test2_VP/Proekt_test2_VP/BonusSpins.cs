@@ -15,11 +15,12 @@ namespace Proekt_test2_VP
     {
         WindowsMediaPlayer musicPlayer = new WindowsMediaPlayer();
         PlayerClass player;
+        Randomizer random = new Randomizer();
+
         public List<PictureBox> PictureBoxes { get; set; }
         public BonusSpins(PlayerClass Player)
         {
             InitializeComponent();
-            Randomizer Randomizer = new Randomizer();
             DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
             musicImage.Image = Image.FromFile("mute.png");
@@ -41,7 +42,7 @@ namespace Proekt_test2_VP
         {
             foreach (PictureBox pb in PictureBoxes)
             {
-                pb.Image = Image.FromFile("Pictures/" + Randomizer.getRand(1, 9).ToString() + ".png");
+                pb.Image = Image.FromFile("Pictures/" + random.getRand(1, 9).ToString() + ".png");
             }
 
             creditLabel.Text = "Credits: " + player.Credits.ToString();
@@ -167,25 +168,21 @@ namespace Proekt_test2_VP
         private void Rolling()
         {
             for (int i = 0; i < 12; i++)
-            {
-                p[i] = Randomizer.getRand(0, 100);
-
-                p[i] = Rigged_lol(p[i]);
+            { 
+                p[i] = random.Rigged_lol(0, 100);
 
                 // ova e proverka da nema poveke od eden scroll vo ista kolona
                 if (i >= 4)
                 {
                     if (p[i] == p[i - 4] & p[i] == 8)
                     {
-                        p[i] = Randomizer.getRand(0, 90);
-                        p[i] = Rigged_lol(p[i]);
+                        p[i] = random.Rigged_lol(0, 90);
                     }
                     if (i >= 8)
                     {
                         if (p[i] == p[i - 8] & p[i] == 8)
                         {
-                            p[i] = Randomizer.getRand(0, 90);
-                            p[i] = Rigged_lol(p[i]);
+                            p[i] = random.Rigged_lol(0, 90);
                         }
                     }
                 }
@@ -200,52 +197,7 @@ namespace Proekt_test2_VP
             }
 
         }
-        public int Rigged_lol(int i)
-        {
-            // Total: 9 images...
-            // 10% chance to get 1.png
-            if (i < 10)
-            {
-                i = 1;
-            }
-            // 10% chance to get 2.png
-            else if (i < 20)
-            {
-                i = 2;
-            }
-            // 15% chance to get 3.png
-            else if (i < 35)
-            {
-                i = 3;
-            }
-            // 15% chance to get 4.png
-            else if (i < 50)
-            {
-                i = 4;
-            }
-            // 15% chance to get 5.png
-            else if (i < 65)
-            {
-                i = 5;
-            }
-            // 15% chance to get 6.png
-            else if (i < 80)
-            {
-                i = 6;
-            }
-            // 10% chance to get 7.png
-            else if (i < 90)
-            {
-                i = 7;
-            }
-            // 10% chance to get 8.png
-            else if (i < 100)
-            {
-                i = 8;
-            }
-            return i;
-        }
-
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
             Rolling();
