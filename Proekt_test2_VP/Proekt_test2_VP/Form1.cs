@@ -243,7 +243,15 @@ namespace Proekt_test2_VP
 
         }
         public void WonBoxes()
-        {              
+        {
+            foreach (List<PictureBox> li in winningBoxes.Values)
+            {
+                foreach(PictureBox pb in li)
+                    pb.BackgroundImage = Image.FromFile("win-img.png");
+            }
+
+
+
             Invalidate(true);
         }
         public void WonBoxesToNormal()
@@ -423,7 +431,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -447,7 +454,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -469,7 +475,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -496,7 +501,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -523,7 +527,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
                     //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
