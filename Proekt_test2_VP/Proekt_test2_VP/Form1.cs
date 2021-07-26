@@ -21,7 +21,6 @@ namespace Proekt_test2_VP
         public List<PictureBox> PictureBoxes { get; set; }
 
         Dictionary<string, List<PictureBox>> winningBoxes { get; set; }
-        Dictionary<string, int> test { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -43,20 +42,12 @@ namespace Proekt_test2_VP
                 { "V", new List<PictureBox>() {  } },
                 { "^", new List<PictureBox>() {  } }
             };
-            test = new Dictionary<string, int>()
-            {
-                ["hehe"] = 1,
-                ["xd"] = 2
-            };
+            
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("test");
-
-            Console.WriteLine(winningBoxes.Keys.Count);
-            Console.WriteLine(test.Keys.Count);
 
             foreach (PictureBox pb in PictureBoxes)
             {
@@ -66,35 +57,11 @@ namespace Proekt_test2_VP
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             BetAmountNumeric.Value = Convert.ToDecimal(player.Bet);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (player.Credits >= player.Bet || timer1.Enabled)
-            {
-                if (timer1.Enabled)
-                {
-                    timer1.Stop();
-                    Pay();
-                }
-                else
-                {
-                    player.Spin();
-                    creditLabel.Text = "Credits: " + player.Credits.ToString();
-                    timer1.Start();
-                }
-                player.Total = 0;
-
-            }
-        }
         
         private void Pay()
         {
             // GET RESULTS FROM PAYTABLE
             // CHECK IF 1, 2, 3 or 4 OCCURANCES
-            Console.WriteLine("test2");
-
-            Console.WriteLine(winningBoxes.Keys.Count);
-            Console.WriteLine(test.Keys.Count);
             // for 4 connections && for 3 connections:
             if (p[0] == p[1] & p[1] == p[2] & p[0] != 8) // 1 red..
             {
@@ -164,8 +131,8 @@ namespace Proekt_test2_VP
                 winningBoxes["V"].Add(PictureBoxes[10]);
                 
                 winningBoxes["up"].Add(PictureBoxes[7]);
- 
-                player.getZigZag(p[0]);
+
+                player.getConnected4(p[0]);
             }
             if (p[1] == p[4] & p[6] == p[11] & p[4] == p[6] & p[1] != 8)
             {
@@ -176,7 +143,7 @@ namespace Proekt_test2_VP
 
                 winningBoxes["up"].Add(PictureBoxes[4]);
 
-                player.getZigZag(p[1]);
+                player.getConnected4(p[1]);
             }
             if (p[2] == p[5] & p[8] == p[7] & p[5] == p[8] & p[2] != 8)
             {
@@ -187,7 +154,7 @@ namespace Proekt_test2_VP
                 winningBoxes["up"].Add(PictureBoxes[5]);
                 winningBoxes["up"].Add(PictureBoxes[8]);
 
-                player.getZigZag(p[2]);
+                player.getConnected4(p[2]);
             }
             if (p[3] == p[6] & p[9] == p[4] & p[6] == p[9] & p[3] != 8)
             {
@@ -198,7 +165,7 @@ namespace Proekt_test2_VP
                 winningBoxes["up"].Add(PictureBoxes[3]);
                 winningBoxes["up"].Add(PictureBoxes[6]);
 
-                player.getZigZag(p[3]);
+                player.getConnected4(p[3]);
             }
             WonBoxes();
 
@@ -247,7 +214,7 @@ namespace Proekt_test2_VP
             foreach (List<PictureBox> li in winningBoxes.Values)
             {
                 foreach(PictureBox pb in li)
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
+                    pb.BackgroundImage = Image.FromFile("Pictures/win-img.png");
             }
 
 
@@ -313,6 +280,7 @@ namespace Proekt_test2_VP
         private void timer1_Tick(object sender, EventArgs e)
         {
             Rolling();
+            SpinButton.Enabled = true;
             if (musicImage.Tag.Equals("unmute.png") && musicPlayer.playState == WMPLib.WMPPlayState.wmppsPaused)
             {
                 musicPlayer.URL = "OogwayAscends.mp3";
@@ -349,7 +317,7 @@ namespace Proekt_test2_VP
             if (musicImage.Tag.Equals("mute.png"))
             {
                 trackBar1.Value = 5;
-                musicImage.Image = Image.FromFile("unmute.png");
+                musicImage.Image = Image.FromFile("Pictures/unmute.png");
                 musicImage.Tag = "unmute.png";
                 musicPlayer.URL = "OogwayAscends.mp3";
                 musicPlayer.controls.play();
@@ -357,7 +325,7 @@ namespace Proekt_test2_VP
             else
             {
                 trackBar1.Value = 0;
-                musicImage.Image = Image.FromFile("mute.png");
+                musicImage.Image = Image.FromFile("Pictures/mute.png");
                 musicImage.Tag = "mute.png";
                 musicPlayer.controls.pause();
             }
@@ -366,12 +334,15 @@ namespace Proekt_test2_VP
 
         private void FeatureButton_Click(object sender, EventArgs e)
         {
-            player.BuyFeature();
-            musicPlayer.controls.pause();
-            Scroll newScroll = new Scroll(player);
-            this.Hide();
-            newScroll.ShowDialog();
-            this.Close();
+            if (MessageBox.Show("Are you sure you want to spend " + (player.Bet * 100).ToString() + " from your Credits?", "Purchase Bonus Feature" , MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                player.BuyFeature();
+                musicPlayer.controls.pause();
+                Scroll newScroll = new Scroll(player);
+                this.Hide();
+                newScroll.ShowDialog();
+                this.Close();
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -400,9 +371,12 @@ namespace Proekt_test2_VP
                     SpinButton.Text = "Spin";
                     timer1.Stop();
                     Pay();
+                    BetAmountNumeric.Enabled = true;
                 }
                 else
                 {
+                    SpinButton.Enabled = false;
+                    BetAmountNumeric.Enabled = false;
                     WonBoxesToNormal();
                     SpinButton.Text = "Stop";
                     player.Spin();
@@ -534,21 +508,11 @@ namespace Proekt_test2_VP
 
                 }
             }
-           
-
-
-
         }
 
+        private void info_box_Click(object sender, EventArgs e)
+        {
 
-
-
-
-
-
-
-
-
-
+        }
     }
 }
