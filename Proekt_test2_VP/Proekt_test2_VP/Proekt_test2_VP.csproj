@@ -128,5 +128,17 @@
   <ItemGroup>
     <None Include="Resources\PandaScroll.jpeg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HallOfWarriors.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DragonScroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mute.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

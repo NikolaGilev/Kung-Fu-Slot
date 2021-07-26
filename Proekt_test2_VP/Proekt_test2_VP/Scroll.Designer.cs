@@ -35,7 +35,9 @@ namespace Proekt_test2_VP
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.ParadiseButton = new System.Windows.Forms.Button();
+            this.info_box = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.info_box)).BeginInit();
             this.SuspendLayout();
             // 
             // SpinButton
@@ -93,6 +95,18 @@ namespace Proekt_test2_VP
             this.ParadiseButton.UseVisualStyleBackColor = false;
             this.ParadiseButton.Click += new System.EventHandler(this.ParadiseButton_Click);
             // 
+            // info_box
+            // 
+            this.info_box.BackColor = System.Drawing.Color.Transparent;
+            this.info_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.info_box.Image = global::Proekt_test2_VP.Properties.Resources.info;
+            this.info_box.Location = new System.Drawing.Point(925, 25);
+            this.info_box.Name = "info_box";
+            this.info_box.Size = new System.Drawing.Size(44, 43);
+            this.info_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.info_box.TabIndex = 25;
+            this.info_box.TabStop = false;
+            // 
             // Scroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -100,6 +114,7 @@ namespace Proekt_test2_VP
             this.BackgroundImage = global::Proekt_test2_VP.Properties.Resources.PandaScroll;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(996, 683);
+            this.Controls.Add(this.info_box);
             this.Controls.Add(this.ParadiseButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.SpinButton);
@@ -110,6 +125,7 @@ namespace Proekt_test2_VP
             this.Name = "Scroll";
             this.Text = "Scroll";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.info_box)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +138,6 @@ namespace Proekt_test2_VP
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ParadiseButton;
+        private System.Windows.Forms.PictureBox info_box;
     }
 }
