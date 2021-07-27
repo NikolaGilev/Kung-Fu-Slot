@@ -16,8 +16,10 @@ namespace Proekt_test2_VP
         WindowsMediaPlayer musicPlayer = new WindowsMediaPlayer();
         PlayerClass player;
         Randomizer random = new Randomizer();
-
+        int volume = 5;
         public List<PictureBox> PictureBoxes { get; set; }
+        Dictionary<string, List<PictureBox>> winningBoxes { get; set; }
+
         public BonusSpins(PlayerClass Player)
         {
             InitializeComponent();
@@ -32,6 +34,16 @@ namespace Proekt_test2_VP
             PictureBoxes = new List<PictureBox> { pictureBox1, pictureBox2, pictureBox3, pictureBox4,
                                                 pictureBox5, pictureBox6, pictureBox7, pictureBox8,
                                                 pictureBox9, pictureBox10, pictureBox11, pictureBox12};
+            winningBoxes = new Dictionary<string, List<PictureBox>>()
+            {
+                { "straight", new List<PictureBox>() {  } },
+                { "down", new List<PictureBox>() {  } },
+                { "up", new List<PictureBox>() {  } },
+                { "V", new List<PictureBox>() {  } },
+                { "^", new List<PictureBox>() {  } },
+                { "scroll",  new List<PictureBox>() { } }, 
+                { "bonus",  new List<PictureBox>() {  } }
+            };
 
         }
 
@@ -56,10 +68,11 @@ namespace Proekt_test2_VP
                     SpinButton.Text = "Spin";
                     timer1.Stop();
                     Pay();
-                }
+            }
                 else if(player.SpinsLeft>0)
                 {
-
+                    SpinButton.Enabled = false;
+                    WonBoxesToNormal();
                     SpinButton.Text = "Stop";
                     creditLabel.Text = "Credits: " + player.Credits.ToString();
                     timer1.Start();
@@ -68,6 +81,7 @@ namespace Proekt_test2_VP
                 }
                 else
                 {
+                    player.getBonusCredit();
                     SpinButton.Text = "Spin";
                     Form1 form = new Form1();
                     form.player.Credits = player.Credits;
@@ -76,118 +90,326 @@ namespace Proekt_test2_VP
                     form.ShowDialog();
                     this.Close();
                     player.Total = 0;
+                    player.TotalWin = 0;
                 }
-
-                player.Total = 0;
+            player.Total = 0;
         }
 
         private void Pay()
         {
             // GET RESULTS FROM PAYTABLE
             // CHECK IF 1, 2, 3 or 4 OCCURANCES
-
-            // for 3 and 4 connections :
-            int couter = 1;
-            bool connect3 = false;
-            int px = 0;
-
-            for (int i = 1; i < 12; i += 4)
+            // for 4 connections && for 3 connections:
+            if (p[0] == p[1] & p[1] == p[2] & p[0] != 8) // 1 red..
             {
-                for (int j = i; j < i + 3; j++)
+                winningBoxes["straight"].Add(PictureBoxes[0]);
+                winningBoxes["straight"].Add(PictureBoxes[1]);
+                winningBoxes["straight"].Add(PictureBoxes[2]);
+
+                if (p[2] == p[3]) // proverka za 4-to
                 {
-                    if (p[j - 1] == p[j])
-                    {
-                        couter++;
-                        px = p[j];
-                    }
-                    else
-                    {
-                        break;
-                    }
-                    if (couter == 3) connect3 = true; // minimum 3 se konektiraat
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[0], PictureBoxes[1], PictureBoxes[2],PictureBoxes[3] });
 
-                    if (couter == 4)
-                    {
-                        player.getConnected4(px);
-                        connect3 = false;
-                    }
-
-
+                    winningBoxes["straight"].Add(PictureBoxes[3]);
+                    player.getConnected4(p[0]);
+                }
+                else
+                {
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[0], PictureBoxes[1], PictureBoxes[2] });
+                    player.getConnected3(p[0]);
                 }
 
-                if (connect3) // povika funkcija za da isplati 3 spoeni
+            }
+            if (p[4] == p[5] & p[5] == p[6] & p[4] != 8) // 2 red..
+            {
+                winningBoxes["straight"].Add(PictureBoxes[4]);
+                winningBoxes["straight"].Add(PictureBoxes[5]);
+                winningBoxes["straight"].Add(PictureBoxes[6]);
+                if (p[6] == p[7]) // proverka za 4-to
                 {
-                    player.getConnected3(px);
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[4], PictureBoxes[5], PictureBoxes[6],PictureBoxes[7] });
 
+                    winningBoxes["straight"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[4]);
                 }
+                else
+                {
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[4], PictureBoxes[5], PictureBoxes[6] });
+                    player.getConnected3(p[4]);
+                }
+            }
 
-                px = 0;
-                couter = 1;
-                connect3 = false;
+            if (p[8] == p[9] & p[9] == p[10] & p[8] != 8) // 3 red..
+            {
+                winningBoxes["straight"].Add(PictureBoxes[8]);
+                winningBoxes["straight"].Add(PictureBoxes[9]);
+                winningBoxes["straight"].Add(PictureBoxes[10]);
+                if (p[10] == p[11]) // proverka za 4-to
+                {
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[8], PictureBoxes[9], PictureBoxes[10], PictureBoxes[11] });
+
+                    winningBoxes["straight"].Add(PictureBoxes[11]);
+                    player.getConnected4(p[8]);
+                }
+                else
+                {
+                    //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[8], PictureBoxes[9], PictureBoxes[10] });
+                    player.getConnected3(p[8]);
+                }
             }
 
             // for zig-zag 4 connections :
-            if (p[0] == p[5] & p[10] == p[7] & p[5] == p[10] & p[0] != 5)
-                player.getZigZag(p[0]);
-            if (p[1] == p[4] & p[6] == p[11] & p[4] == p[6] & p[1] != 5)
-                player.getZigZag(p[1]);
-            if (p[2] == p[5] & p[8] == p[7] & p[5] == p[8] & p[2] != 5)
-                player.getZigZag(p[2]);
-            if (p[3] == p[6] & p[9] == p[4] & p[6] == p[9] & p[3] != 5)
-                player.getZigZag(p[3]);
+            if (p[0] == p[5] & p[5] == p[10] & p[0] != 8)
+            {
+                winningBoxes["down"].Add(PictureBoxes[0]);
+                winningBoxes["down"].Add(PictureBoxes[5]);
 
-            // check if 3 scrolls are present...
-            couter = 0;
+                if (p[10] == p[7])
+                {
+                    winningBoxes["V"].Add(PictureBoxes[10]);
+                    winningBoxes["up"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[0]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[10]);
+                    player.getConnected3(p[0]);
+                }
+            }
+            if (p[6] == p[11] & p[1] == p[4] & p[4] == p[6] & p[1] != 8)
+            {
+                winningBoxes["down"].Add(PictureBoxes[6]);
+                winningBoxes["down"].Add(PictureBoxes[11]);
+
+                winningBoxes["^"].Add(PictureBoxes[1]);
+
+                winningBoxes["up"].Add(PictureBoxes[4]);
+
+                player.getConnected4(p[1]);
+            }
+            if (p[2] == p[5] & p[5] == p[8] & p[2] != 8)
+            {
+                winningBoxes["up"].Add(PictureBoxes[5]);
+                winningBoxes["up"].Add(PictureBoxes[8]);
+
+                if (p[8] == p[7])
+                {
+                    winningBoxes["down"].Add(PictureBoxes[7]);
+                    winningBoxes["^"].Add(PictureBoxes[2]);
+                    player.getConnected4(p[2]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[2]);
+                    player.getConnected3(p[2]);
+
+                }
+            }
+            if (p[3] == p[6] & p[9] == p[4] & p[6] == p[9] & p[3] != 8)
+            {
+                winningBoxes["down"].Add(PictureBoxes[4]);
+
+                winningBoxes["V"].Add(PictureBoxes[9]);
+
+                winningBoxes["up"].Add(PictureBoxes[3]);
+                winningBoxes["up"].Add(PictureBoxes[6]);
+
+                player.getConnected4(p[3]);
+            }
+            // for actual zig-zag connections :
+            if (p[0] == p[5] & p[5] == p[2] & p[0] != 8) // 3 connections
+            {
+                winningBoxes["down"].Add(PictureBoxes[0]);
+                winningBoxes["V"].Add(PictureBoxes[5]);
+                if (p[2] == p[7]) // 4 connections
+                {
+                    winningBoxes["^"].Add(PictureBoxes[2]);
+                    winningBoxes["down"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[0]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[2]);
+                    player.getConnected3(p[0]);
+                }
+            }
+            if (p[4] == p[9] & p[9] == p[6] & p[4] != 8) // 3 connections
+            {
+                winningBoxes["down"].Add(PictureBoxes[4]);
+                winningBoxes["V"].Add(PictureBoxes[9]);
+                if (p[6] == p[11]) // 4 connections
+                {
+                    winningBoxes["^"].Add(PictureBoxes[6]);
+                    winningBoxes["down"].Add(PictureBoxes[11]);
+                    player.getConnected4(p[4]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[6]);
+                    player.getConnected3(p[4]);
+                }
+            }
+            if (p[4] == p[1] & p[1] == p[6] & p[4] != 8) // 3 connections
+            {
+                winningBoxes["up"].Add(PictureBoxes[4]);
+                winningBoxes["^"].Add(PictureBoxes[1]);
+                if (p[6] == p[3]) // 4 connections
+                {
+                    winningBoxes["V"].Add(PictureBoxes[6]);
+                    winningBoxes["up"].Add(PictureBoxes[3]);
+                    player.getConnected4(p[4]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[6]);
+                    player.getConnected3(p[4]);
+                }
+            }
+            if (p[8] == p[5] & p[5] == p[10] & p[8] != 8) // 3 connections
+            {
+                winningBoxes["up"].Add(PictureBoxes[8]);
+                winningBoxes["^"].Add(PictureBoxes[5]);
+                if (p[10] == p[7]) // 4 connections
+                {
+                    winningBoxes["V"].Add(PictureBoxes[10]);
+                    winningBoxes["up"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[8]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[10]);
+                    player.getConnected3(p[8]);
+                }
+            }
+
+            
+            // check if 3 scrolls and bonus_picture are present...
+            int counter = 0;
+            int bonuscounter = 0;
             for (int i = 0; i < 12; i++)
             {
                 if (p[i] == 8)
                 {
-                    couter++;
+                    winningBoxes["scroll"].Add(PictureBoxes[i]);
+                    counter++;
+                }
+                if(p[i] == player.BonusPicture)
+                {
+                    winningBoxes["bonus"].Add(PictureBoxes[i]);
+                    bonuscounter++;
                 }
             }
             // 2te podole treba da se skrojat vo posebna fkcija
-            if (couter == 3) // recieve 10 spins
+            if (counter == 3) // recieve 10 spins
             {
-
                 player.SpinsLeft += 10;
             }
-            if (couter == 4) // recieve 15 spins
+            else if (counter == 4) // recieve 15 spins
             {
                 player.SpinsLeft += 15;
             }
+            else
+            {
+                winningBoxes["scroll"].Clear();
+            }
+            if(bonuscounter >= 2)
+            {
+                player.getBonus(bonuscounter);
+            }
+            else
+            {
+                winningBoxes["bonus"].Clear();
+            }
 
-            player.getCredit();
-
+            // to draw/style the won boxes
+            WonBoxes();
+            player.getBonusTotal();
 
             WinLabel.Text = "Win: " + player.Total.ToString();
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             BetLabel.Text = "Bet: " + player.Bet.ToString();
             FreeSpinsLabel.Text = "Free spins left: " + player.SpinsLeft.ToString();
+            TotalWinLabel.Text = "Total Win: " + player.TotalWin.ToString();
+        }
+        public void WonBoxes()
+        {
+            //foreach (List<PictureBox> li in winningBoxes.Values)
+            //{
+            //    foreach (PictureBox pb in li)
+            //    {
+            //        pb.BackgroundImage = Image.FromFile("win-img.png");
+            //    }
+            //}
+            foreach(KeyValuePair<string,List<PictureBox>> kvp in winningBoxes)
+            {
+                    foreach (PictureBox pb in kvp.Value)
+                    {
+                        if (kvp.Key.Equals("bonus") || kvp.Key.Equals("scroll")){
+                           pb.BackgroundImage = Image.FromFile("Pictures/win-img-purple.png");
+                    }
+                        else
+                        {
+                            pb.BackgroundImage = Image.FromFile("Pictures/win-img.png");
+                        }
+                    }
+            }
+            Invalidate(true);
+        }
+        public void WonBoxesToNormal()
+        {
+            foreach (List<PictureBox> kvp in winningBoxes.Values)
+            {
+                foreach (PictureBox pb in kvp)
+                {
+                    pb.BackColor = Color.Transparent;
+                    pb.BackgroundImage = null;
+                    pb.BorderStyle = BorderStyle.None;
+                }
+            }
+
+            // winningBoxes.Clear() but keeping the keys
+            winningBoxes["straight"].Clear();
+            winningBoxes["down"].Clear();
+            winningBoxes["up"].Clear();
+            winningBoxes["^"].Clear();
+            winningBoxes["V"].Clear();
+            winningBoxes["bonus"].Clear();
+            winningBoxes["scroll"].Clear();
+
         }
 
         private void Rolling()
         {
             for (int i = 0; i < 12; i++)
             { 
-                p[i] = random.Rigged_lol(0, 100);
+                p[i] = random.Rigged_lol(0, 105);
+                if (p[i] == 9) p[i] = player.BonusPicture;
 
-                // ova e proverka da nema poveke od eden scroll vo ista kolona
-                if (i >= 4)
+                // ova e proverka da nema poveke od eden scroll i Bonus_picture vo ista kolona
+                if (i >= 4) // za vtor red
                 {
-                    if (p[i] == p[i - 4] & p[i] == 8)
+                    if (p[i] == p[i - 4])
                     {
-                        p[i] = random.Rigged_lol(0, 90);
-                    }
-                    if (i >= 8)
-                    {
-                        if (p[i] == p[i - 8] & p[i] == 8)
-                        {
+                        if (p[i] == player.BonusPicture)
+                            p[i] = random.Rigged_lol(0, 100);
+
+                        if (p[i] == 8)
                             p[i] = random.Rigged_lol(0, 90);
+                    }
+                    if (i >= 8) // za tret red
+                    {
+                        if (p[i] == p[i - 8] | p[i] == p[i - 4])
+                        {
+                            if (p[i] == player.BonusPicture)
+                                p[i] = random.Rigged_lol(0, 100);
+
+                            if (p[i] == 8)
+                                p[i] = random.Rigged_lol(0, 90);
                         }
                     }
                 }
-
             }
+
             int t = 0;
             foreach (PictureBox pb in PictureBoxes)
             {
@@ -201,6 +423,7 @@ namespace Proekt_test2_VP
         private void timer1_Tick(object sender, EventArgs e)
         {
             Rolling();
+            SpinButton.Enabled = true;
             if (musicImage.Tag.Equals("unmute.png") && musicPlayer.playState == WMPLib.WMPPlayState.wmppsStopped)
             {
                 musicPlayer.URL = "KungFuFighting.mp3";
@@ -212,14 +435,16 @@ namespace Proekt_test2_VP
         {
             if (musicImage.Tag.Equals("mute.png"))
             {
-                musicImage.Image = Image.FromFile("unmute.png");
+                trackBar1.Value = volume;
+                musicImage.Image = Image.FromFile("Pictures/unmute.png");
                 musicImage.Tag = "unmute.png";
                 musicPlayer.URL = "KungFuFighting.mp3";
                 musicPlayer.controls.play();
             }
             else
             {
-                musicImage.Image = Image.FromFile("mute.png");
+                volume = trackBar1.Value;
+                musicImage.Image = Image.FromFile("Pictures/mute.png");
                 musicImage.Tag = "mute.png";
                 musicPlayer.controls.pause();
             }
@@ -240,6 +465,136 @@ namespace Proekt_test2_VP
         private void BonusSpins_MouseEnter(object sender, EventArgs e)
         {
             trackBar1.Visible = false;
+        }
+
+        private void BonusSpins_Paint(object sender, PaintEventArgs e)
+        {
+            // -, down, up, v, ^
+
+            if (winningBoxes.TryGetValue("straight",out List<PictureBox> straight))
+            {
+                foreach(PictureBox pb in straight)
+                {
+                    Graphics g = pb.CreateGraphics();
+
+                    g.DrawLine(
+                        new Pen(Color.Blue, 2f),
+                        new Point(0, pb.Size.Height / 2),
+                        new Point(pb.Size.Width, pb.Size.Height / 2));
+
+                    g.Dispose();
+                    //elipse
+
+                    //g.DrawEllipse(
+                    //    new Pen(Color.Red, 4f),
+                    //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
+
+
+                }
+
+            }
+
+            if (winningBoxes.TryGetValue("down", out List<PictureBox> down))
+            {
+                foreach (PictureBox pb in down)
+                {
+                    Graphics g = pb.CreateGraphics();
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(0, 0),
+                        new Point(pb.Size.Width, pb.Size.Height));
+
+                    g.Dispose();
+                    //elipse
+
+                    //g.DrawEllipse(
+                    //    new Pen(Color.Red, 4f),
+                    //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
+
+                }
+            }
+
+            if (winningBoxes.TryGetValue("up", out List<PictureBox> up))
+            {
+                foreach (PictureBox pb in up)
+                {
+                    Graphics g = pb.CreateGraphics();
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(0, pb.Size.Height),
+                        new Point(pb.Size.Width, 0));
+
+                    g.Dispose();
+                    //elipse
+
+                    //g.DrawEllipse(
+                    //    new Pen(Color.Red, 4f),
+                    //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
+
+                }
+            }
+
+            if (winningBoxes.TryGetValue("V", out List<PictureBox> v))
+            {
+                foreach (PictureBox pb in v)
+                {
+                    Graphics g = pb.CreateGraphics();
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(0, 0), 
+                        new Point(pb.Size.Width / 2, pb.Size.Height / 2));
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(pb.Size.Width / 2, pb.Size.Height / 2),
+                        new Point(pb.Size.Width, 0));
+
+                    g.Dispose();
+                    //elipse
+
+                    //g.DrawEllipse(
+                    //    new Pen(Color.Red, 4f),
+                    //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
+
+                }
+            }
+
+            if (winningBoxes.TryGetValue("^", out List<PictureBox> unV))
+            {
+                foreach (PictureBox pb in unV)
+                {
+                    Graphics g = pb.CreateGraphics();
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(0, pb.Size.Height),
+                        new Point(pb.Size.Width / 2, pb.Size.Height / 2));
+
+                    g.DrawLine(
+                        new Pen(Color.White, 2f),
+                        new Point(pb.Size.Width / 2, pb.Size.Height / 2),
+                        new Point(pb.Size.Width, pb.Size.Height));
+
+                    g.Dispose();
+                    //elipse
+                    //g.DrawEllipse(
+                    //    new Pen(Color.Red, 4f),
+                    //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
+
+
+                }
+            }
+        }
+
+        private void info_box_Click(object sender, EventArgs e)
+        {
+            InfoBox ib = new InfoBox(player);
+            //this.Hide();
+            ib.ShowDialog();
+            // this.Close();
         }
     }
 }

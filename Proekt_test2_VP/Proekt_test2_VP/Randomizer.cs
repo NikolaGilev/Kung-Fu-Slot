@@ -23,13 +23,13 @@ namespace Proekt_test2_VP
         {
             int i = getRand(min, max);
             // Total: 9 images...
-            // 10% chance to get 1.png
-            if (i < 50)
+            // 25% chance to get 1.png
+            if (i < 25)
             {
                 i = 1;
             }
-            // 10% chance to get 2.png
-            else if (i < 20)
+            // 5% chance to get 2.png
+            else if (i < 30)
             {
                 i = 2;
             }
@@ -62,6 +62,11 @@ namespace Proekt_test2_VP
             else if (i < 100)
             {
                 i = 8;
+            }
+            // 5% chance to get bonus picture
+            else if (i < 105)
+            {
+                i = 9;
             }
             return i;
         }
