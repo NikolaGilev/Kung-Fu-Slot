@@ -15,7 +15,7 @@ namespace Proekt_test2_VP
         int Timer = 0;
         PlayerClass player;
         Randomizer random = new Randomizer();
-
+        int spinTimes = 0;
         public Scroll(PlayerClass Player)
         {
             InitializeComponent();
@@ -26,7 +26,13 @@ namespace Proekt_test2_VP
 
         private void SpinButton_Click(object sender, EventArgs e)
         {
-            timer1.Start();
+            if (spinTimes < 2)
+            {
+                timer1.Start();
+                spinTimes++;
+                Timer = 0;
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -36,10 +42,21 @@ namespace Proekt_test2_VP
                 Timer++;
                 player.BonusPicture = random.getRand(9, 15);
                 pictureBox1.Image = Image.FromFile("Pictures/" + player.BonusPicture.ToString() + ".png");
+                SpinButton.Enabled = false;
             }
             else
             {
                 timer1.Stop();
+
+                if (spinTimes < 2)
+                {
+                    SpinButton.Enabled = true;
+                }
+                else
+                {
+                    SpinButton.Enabled = false;
+                }
+
                 ParadiseButton.Enabled = true;
             }
         }

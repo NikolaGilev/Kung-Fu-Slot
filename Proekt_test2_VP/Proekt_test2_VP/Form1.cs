@@ -16,12 +16,11 @@ namespace Proekt_test2_VP
         WindowsMediaPlayer musicPlayer = new WindowsMediaPlayer();
         public PlayerClass player = new PlayerClass();
         Randomizer random = new Randomizer();
-        
+        int volume = 5;
         public static int[] p = new int[12];
         public List<PictureBox> PictureBoxes { get; set; }
 
         Dictionary<string, List<PictureBox>> winningBoxes { get; set; }
-        Dictionary<string, int> test { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -43,20 +42,12 @@ namespace Proekt_test2_VP
                 { "V", new List<PictureBox>() {  } },
                 { "^", new List<PictureBox>() {  } }
             };
-            test = new Dictionary<string, int>()
-            {
-                ["hehe"] = 1,
-                ["xd"] = 2
-            };
+            
         }
 
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Console.WriteLine("test");
-
-            Console.WriteLine(winningBoxes.Keys.Count);
-            Console.WriteLine(test.Keys.Count);
 
             foreach (PictureBox pb in PictureBoxes)
             {
@@ -66,39 +57,14 @@ namespace Proekt_test2_VP
             creditLabel.Text = "Credits: " + player.Credits.ToString();
             BetAmountNumeric.Value = Convert.ToDecimal(player.Bet);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (player.Credits >= player.Bet || timer1.Enabled)
-            {
-                if (timer1.Enabled)
-                {
-                    timer1.Stop();
-                    Pay();
-                }
-                else
-                {
-                    player.Spin();
-                    creditLabel.Text = "Credits: " + player.Credits.ToString();
-                    timer1.Start();
-                }
-                player.Total = 0;
-
-            }
-        }
         
         private void Pay()
         {
             // GET RESULTS FROM PAYTABLE
             // CHECK IF 1, 2, 3 or 4 OCCURANCES
-            Console.WriteLine("test2");
-
-            Console.WriteLine(winningBoxes.Keys.Count);
-            Console.WriteLine(test.Keys.Count);
             // for 4 connections && for 3 connections:
             if (p[0] == p[1] & p[1] == p[2] & p[0] != 8) // 1 red..
             {
-
                 winningBoxes["straight"].Add(PictureBoxes[0]);
                 winningBoxes["straight"].Add(PictureBoxes[1]);
                 winningBoxes["straight"].Add(PictureBoxes[2]);
@@ -127,12 +93,12 @@ namespace Proekt_test2_VP
                     //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[4], PictureBoxes[5], PictureBoxes[6],PictureBoxes[7] });
 
                     winningBoxes["straight"].Add(PictureBoxes[7]);
-                    player.getConnected4(p[0]);
+                    player.getConnected4(p[4]);
                 }
                 else
                 {
                     //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[4], PictureBoxes[5], PictureBoxes[6] });
-                    player.getConnected3(p[0]);
+                    player.getConnected3(p[4]);
                 }
             }
 
@@ -146,28 +112,34 @@ namespace Proekt_test2_VP
                     //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[8], PictureBoxes[9], PictureBoxes[10], PictureBoxes[11] });
 
                     winningBoxes["straight"].Add(PictureBoxes[11]);
-                    player.getConnected4(p[0]);
+                    player.getConnected4(p[8]);
                 }
                 else
                 {
                     //winningBoxes.Add("straight", new List<PictureBox> { PictureBoxes[8], PictureBoxes[9], PictureBoxes[10] });
-                    player.getConnected3(p[0]);
+                    player.getConnected3(p[8]);
                 }
             }
 
             // for zig-zag 4 connections :
-            if (p[0] == p[5] & p[10] == p[7] & p[5] == p[10] & p[0] != 8)
+            if (p[0] == p[5] & p[5] == p[10] & p[0] != 8)
             {
                 winningBoxes["down"].Add(PictureBoxes[0]);
                 winningBoxes["down"].Add(PictureBoxes[5]);
                 
-                winningBoxes["V"].Add(PictureBoxes[10]);
-                
-                winningBoxes["up"].Add(PictureBoxes[7]);
- 
-                player.getZigZag(p[0]);
+                if (p[10] == p[7])
+                {
+                    winningBoxes["V"].Add(PictureBoxes[10]);
+                    winningBoxes["up"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[0]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[10]);
+                    player.getConnected3(p[0]);
+                }
             }
-            if (p[1] == p[4] & p[6] == p[11] & p[4] == p[6] & p[1] != 8)
+            if (p[6] == p[11] & p[1] == p[4] & p[4] == p[6] & p[1] != 8)
             {
                 winningBoxes["down"].Add(PictureBoxes[6]);
                 winningBoxes["down"].Add(PictureBoxes[11]);
@@ -175,19 +147,26 @@ namespace Proekt_test2_VP
                 winningBoxes["^"].Add(PictureBoxes[1]);
 
                 winningBoxes["up"].Add(PictureBoxes[4]);
-
-                player.getZigZag(p[1]);
+               
+                player.getConnected4(p[1]);
             }
-            if (p[2] == p[5] & p[8] == p[7] & p[5] == p[8] & p[2] != 8)
+            if (p[2] == p[5] & p[5] == p[8] & p[2] != 8)
             {
-                winningBoxes["down"].Add(PictureBoxes[7]);
-
-                winningBoxes["^"].Add(PictureBoxes[2]);
-
-                winningBoxes["up"].Add(PictureBoxes[5]);
+                winningBoxes["up"].Add(PictureBoxes[5]); 
                 winningBoxes["up"].Add(PictureBoxes[8]);
 
-                player.getZigZag(p[2]);
+                if (p[8] == p[7])
+                {
+                    winningBoxes["down"].Add(PictureBoxes[7]);
+                    winningBoxes["^"].Add(PictureBoxes[2]);
+                    player.getConnected4(p[2]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[2]);
+                    player.getConnected3(p[2]);
+
+                }
             }
             if (p[3] == p[6] & p[9] == p[4] & p[6] == p[9] & p[3] != 8)
             {
@@ -198,8 +177,75 @@ namespace Proekt_test2_VP
                 winningBoxes["up"].Add(PictureBoxes[3]);
                 winningBoxes["up"].Add(PictureBoxes[6]);
 
-                player.getZigZag(p[3]);
+                player.getConnected4(p[3]);
             }
+            // for actual zig-zag connections :
+            if (p[0] == p[5] & p[5] == p[2] & p[0] != 8) // 3 connections
+            {
+                winningBoxes["down"].Add(PictureBoxes[0]);
+                winningBoxes["V"].Add(PictureBoxes[5]);
+                if (p[2] == p[7]) // 4 connections
+                {
+                    winningBoxes["^"].Add(PictureBoxes[2]);
+                    winningBoxes["down"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[0]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[2]);
+                    player.getConnected3(p[0]);
+                }
+            }
+            if (p[4] == p[9] & p[9] == p[6] & p[4] != 8) // 3 connections
+            {
+                winningBoxes["down"].Add(PictureBoxes[4]);
+                winningBoxes["V"].Add(PictureBoxes[9]);
+                if (p[6] == p[11]) // 4 connections
+                {
+                    winningBoxes["^"].Add(PictureBoxes[6]);
+                    winningBoxes["down"].Add(PictureBoxes[11]);
+                    player.getConnected4(p[4]);
+                }
+                else
+                {
+                    winningBoxes["up"].Add(PictureBoxes[6]);
+                    player.getConnected3(p[4]);
+                }
+            }
+            if (p[4] == p[1] & p[1] == p[6] & p[4] != 8) // 3 connections
+            {
+                winningBoxes["up"].Add(PictureBoxes[4]);
+                winningBoxes["^"].Add(PictureBoxes[1]);
+                if (p[6] == p[3]) // 4 connections
+                {
+                    winningBoxes["V"].Add(PictureBoxes[6]);
+                    winningBoxes["up"].Add(PictureBoxes[3]);
+                    player.getConnected4(p[4]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[6]);
+                    player.getConnected3(p[4]);
+                }
+            }
+            if (p[8] == p[5] & p[5] == p[10] & p[8] != 8) // 3 connections
+            {
+                winningBoxes["up"].Add(PictureBoxes[8]);
+                winningBoxes["^"].Add(PictureBoxes[5]);
+                if (p[10] == p[7]) // 4 connections
+                {
+                    winningBoxes["V"].Add(PictureBoxes[10]);
+                    winningBoxes["up"].Add(PictureBoxes[7]);
+                    player.getConnected4(p[8]);
+                }
+                else
+                {
+                    winningBoxes["down"].Add(PictureBoxes[10]);
+                    player.getConnected3(p[8]);
+                }
+            }
+
+            // to draw/style the won boxes
             WonBoxes();
 
             // check if 3 scrolls are present...
@@ -214,6 +260,8 @@ namespace Proekt_test2_VP
 // 2te podole treba da se skrojat vo posebna fkcija
             if (couter == 3) // recieve 10 spins
             {
+                player.getConnected3(8);
+                player.getCredit();
                 System.Threading.Thread.Sleep(1000);
                 player.SpinsLeft += 10;
                 //MessageBox.Show("You've Won 10 Free Spins!", "Congratulations!", MessageBoxButtons.OK);
@@ -223,8 +271,10 @@ namespace Proekt_test2_VP
                 newScroll.ShowDialog();
                 this.Close();
             }
-            if(couter == 4) // recieve 15 spins
+            if (couter == 4) // recieve 15 spins
             {
+                player.getConnected4(8);
+                player.getCredit();
                 System.Threading.Thread.Sleep(1000);
                 player.SpinsLeft += 15;
                 //MessageBox.Show("You've Won 15 Free Spins!", "Congratulations!", MessageBoxButtons.OK);
@@ -234,8 +284,10 @@ namespace Proekt_test2_VP
                 newScroll.ShowDialog();
                 this.Close();
             }
-
-            player.getCredit();
+            else
+            {
+                player.getCredit();
+            }
 
             WinLabel.Text = "Win: " + player.Total.ToString();
             creditLabel.Text = "Credits: " + player.Credits.ToString();
@@ -243,7 +295,15 @@ namespace Proekt_test2_VP
 
         }
         public void WonBoxes()
-        {              
+        {
+            foreach (List<PictureBox> li in winningBoxes.Values)
+            {
+                foreach(PictureBox pb in li)
+                    pb.BackgroundImage = Image.FromFile("Pictures/win-img.png");
+            }
+
+
+
             Invalidate(true);
         }
         public void WonBoxesToNormal()
@@ -284,7 +344,7 @@ namespace Proekt_test2_VP
                     }
                     if(i >= 8)
                     {
-                        if (p[i] == p[i - 8] & p[i] == 8)
+                        if ( (p[i] == p[i - 8] | p[i] == p[i - 4]) & p[i] == 8)
                         {
                             p[i] = random.Rigged_lol(0, 90);
                         }
@@ -305,6 +365,7 @@ namespace Proekt_test2_VP
         private void timer1_Tick(object sender, EventArgs e)
         {
             Rolling();
+            SpinButton.Enabled = true;
             if (musicImage.Tag.Equals("unmute.png") && musicPlayer.playState == WMPLib.WMPPlayState.wmppsPaused)
             {
                 musicPlayer.URL = "OogwayAscends.mp3";
@@ -340,16 +401,16 @@ namespace Proekt_test2_VP
         {
             if (musicImage.Tag.Equals("mute.png"))
             {
-                trackBar1.Value = 5;
-                musicImage.Image = Image.FromFile("unmute.png");
+                trackBar1.Value = volume;
+                musicImage.Image = Image.FromFile("Pictures/unmute.png");
                 musicImage.Tag = "unmute.png";
                 musicPlayer.URL = "OogwayAscends.mp3";
                 musicPlayer.controls.play();
             }
             else
             {
-                trackBar1.Value = 0;
-                musicImage.Image = Image.FromFile("mute.png");
+                volume = trackBar1.Value;
+                musicImage.Image = Image.FromFile("Pictures/mute.png");
                 musicImage.Tag = "mute.png";
                 musicPlayer.controls.pause();
             }
@@ -358,12 +419,15 @@ namespace Proekt_test2_VP
 
         private void FeatureButton_Click(object sender, EventArgs e)
         {
-            player.BuyFeature();
-            musicPlayer.controls.pause();
-            Scroll newScroll = new Scroll(player);
-            this.Hide();
-            newScroll.ShowDialog();
-            this.Close();
+            if (MessageBox.Show("Are you sure you want to spend " + (player.Bet * 100).ToString() + " from your Credits?", "Purchase Bonus Feature" , MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                player.BuyFeature();
+                musicPlayer.controls.pause();
+                Scroll newScroll = new Scroll(player);
+                this.Hide();
+                newScroll.ShowDialog();
+                this.Close();
+            }
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
@@ -392,9 +456,12 @@ namespace Proekt_test2_VP
                     SpinButton.Text = "Spin";
                     timer1.Stop();
                     Pay();
+                    BetAmountNumeric.Enabled = true;
                 }
                 else
                 {
+                    SpinButton.Enabled = false;
+                    BetAmountNumeric.Enabled = false;
                     WonBoxesToNormal();
                     SpinButton.Text = "Stop";
                     player.Spin();
@@ -423,7 +490,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -447,7 +513,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -469,7 +534,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -496,7 +560,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
 
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
@@ -523,7 +586,6 @@ namespace Proekt_test2_VP
 
                     g.Dispose();
                     //elipse
-                    pb.BackgroundImage = Image.FromFile("win-img.png");
                     //g.DrawEllipse(
                     //    new Pen(Color.Red, 4f),
                     //    5, 5, pb.Size.Width - 20, pb.Size.Height - 20);
@@ -531,21 +593,15 @@ namespace Proekt_test2_VP
 
                 }
             }
-           
-
-
-
         }
 
-
-
-
-
-
-
-
-
-
+        private void info_box_Click(object sender, EventArgs e)
+        {
+            InfoBox ib = new InfoBox(player);
+            //this.Hide();
+            ib.ShowDialog();
+           // this.Close();
+        }
 
     }
 }
