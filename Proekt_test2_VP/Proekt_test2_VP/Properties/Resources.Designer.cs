@@ -73,36 +73,6 @@ namespace Proekt_test2_VP.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bonusborder {
-            get {
-                object obj = ResourceManager.GetObject("bonusborder", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap border {
-            get {
-                object obj = ResourceManager.GetObject("border", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap border1 {
-            get {
-                object obj = ResourceManager.GetObject("border1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap DragonScroll {
             get {
                 object obj = ResourceManager.GetObject("DragonScroll", resourceCulture);
@@ -126,16 +96,6 @@ namespace Proekt_test2_VP.Properties {
         internal static System.Drawing.Bitmap info {
             get {
                 object obj = ResourceManager.GetObject("info", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap infoboxBackground {
-            get {
-                object obj = ResourceManager.GetObject("infoboxBackground", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
