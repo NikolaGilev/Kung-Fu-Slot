@@ -122,3 +122,5 @@ C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main last versi
 C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main last version 27-07\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
 C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main last version 27-07\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
 C:\Users\Koki\Desktop\vizuleno proekt\SlotsVizuelnoProgramiranje-main last version 27-07\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.InfoBox.resources
+C:\Users\Marko\Documents\GitHub\SlotsVizuelnoProgramiranje\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.InfoBox.resources
+C:\Users\Marko\Documents\GitHub\SlotsVizuelnoProgramiranje\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Menu.resources

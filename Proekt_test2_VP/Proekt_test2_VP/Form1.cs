@@ -603,5 +603,19 @@ namespace Proekt_test2_VP
            // this.Close();
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Menu menu = new Menu();
+                this.Hide();
+                menu.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+            }
+        }
     }
 }
