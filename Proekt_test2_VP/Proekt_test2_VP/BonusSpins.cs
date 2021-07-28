@@ -25,7 +25,7 @@ namespace Proekt_test2_VP
             InitializeComponent();
             DoubleBuffered = true;
             this.SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer, true);
-            musicImage.Image = Image.FromFile("mute.png");
+            musicImage.Image = Image.FromFile("Pictures/mute.png");
             musicImage.Tag = "mute.png";
             player = Player;
             creditLabel.Text = "Credits: " + player.Credits.ToString();
