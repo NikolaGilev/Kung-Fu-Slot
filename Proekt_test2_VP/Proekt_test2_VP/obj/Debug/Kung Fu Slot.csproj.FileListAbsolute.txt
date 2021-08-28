@@ -1,0 +1,19 @@
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe.config
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Proekt_test2_VP.pdb
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Kung Fu Slot.csprojAssemblyReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Interop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Kung Fu Slot.csproj.ResolveComReference.cache
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.BonusSpins.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Form1.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.InfoBox.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Menu.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Properties.Resources.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.Scroll.resources
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Kung Fu Slot.csproj.GenerateResource.cache
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Kung Fu Slot.csproj.CoreCompileInputs.cache
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.exe
+C:\Users\Koki\Desktop\vizuleno proekt\slots newest version\Proekt_test2_VP\Proekt_test2_VP\obj\Debug\Proekt_test2_VP.pdb
