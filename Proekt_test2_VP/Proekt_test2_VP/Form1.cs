@@ -301,11 +301,9 @@ namespace Proekt_test2_VP
                 foreach(PictureBox pb in li)
                     pb.BackgroundImage = Image.FromFile("Pictures/win-img.png");
             }
-
-
-
             Invalidate(true);
         }
+
         public void WonBoxesToNormal()
         {
             foreach (List<PictureBox> kvp in winningBoxes.Values)
@@ -475,7 +473,7 @@ namespace Proekt_test2_VP
 
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            // -, down, up, v, ^
+            // straight, down, up, v, ^
 
             if (winningBoxes.TryGetValue("straight",out List<PictureBox> straight))
             {
@@ -603,5 +601,23 @@ namespace Proekt_test2_VP
            // this.Close();
         }
 
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    musicPlayer.controls.pause();
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+        }
     }
 }

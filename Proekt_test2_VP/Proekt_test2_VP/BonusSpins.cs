@@ -596,6 +596,25 @@ namespace Proekt_test2_VP
             ib.ShowDialog();
             // this.Close();
         }
+
+        private void BonusSpins_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    musicPlayer.controls.pause();
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
+        }
     }
 }
     

@@ -117,11 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label19.Text" xml:space="preserve">
-    <value>Landing 3 or more Scroll symbols will trigger the Bonus Spins.
-Bonus Spins awards 10 spins (for 3 scrolls) or 15 spins (for 4 scrolls).
-A Bonus symbol is randomly chosen for Bonus Spins and may be reshuffled once.
-Landing 3 or more Scroll symbols during Bonus Spins will retrigger the feature.
-</value>
-  </data>
 </root>

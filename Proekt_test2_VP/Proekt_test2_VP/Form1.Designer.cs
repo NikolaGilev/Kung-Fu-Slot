@@ -115,7 +115,6 @@ namespace Proekt_test2_VP
             // 
             // timer1
             // 
-            this.timer1.Interval = 200;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pictureBox4
@@ -230,7 +229,7 @@ namespace Proekt_test2_VP
             // 
             this.BetAmountNumeric.DecimalPlaces = 1;
             this.BetAmountNumeric.Location = new System.Drawing.Point(53, 548);
-            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(2);
+            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BetAmountNumeric.Minimum = new decimal(new int[] {
             1,
             0,
@@ -251,7 +250,7 @@ namespace Proekt_test2_VP
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
             this.musicImage.Image = global::Proekt_test2_VP.Properties.Resources.mute;
             this.musicImage.Location = new System.Drawing.Point(722, 558);
-            this.musicImage.Margin = new System.Windows.Forms.Padding(2);
+            this.musicImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.musicImage.Name = "musicImage";
             this.musicImage.Size = new System.Drawing.Size(42, 32);
             this.musicImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -264,7 +263,7 @@ namespace Proekt_test2_VP
             // 
             this.FeatureButton.BackColor = System.Drawing.Color.Gold;
             this.FeatureButton.Location = new System.Drawing.Point(29, 572);
-            this.FeatureButton.Margin = new System.Windows.Forms.Padding(2);
+            this.FeatureButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FeatureButton.Name = "FeatureButton";
             this.FeatureButton.Size = new System.Drawing.Size(92, 28);
             this.FeatureButton.TabIndex = 19;
@@ -329,7 +328,7 @@ namespace Proekt_test2_VP
             this.info_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.info_box.Image = global::Proekt_test2_VP.Properties.Resources.info;
             this.info_box.Location = new System.Drawing.Point(731, 10);
-            this.info_box.Margin = new System.Windows.Forms.Padding(2);
+            this.info_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.info_box.Name = "info_box";
             this.info_box.Size = new System.Drawing.Size(33, 35);
             this.info_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -379,12 +378,15 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.creditLabel);
             this.Controls.Add(this.pictureBox13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "KungFuPandaSlot";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.MouseEnter += new System.EventHandler(this.Form1_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

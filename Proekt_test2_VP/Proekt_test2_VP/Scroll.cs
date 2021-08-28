@@ -15,48 +15,28 @@ namespace Proekt_test2_VP
         int Timer = 0;
         PlayerClass player;
         Randomizer random = new Randomizer();
-        int spinTimes = 0;
         public Scroll(PlayerClass Player)
         {
             InitializeComponent();
             DoubleBuffered = true;
             player = Player;
             label1.Text = "Congratulations! You Won " + player.SpinsLeft.ToString() + " Free Spins! \n" + "Click The Button Bellow to Pick your Bonus Character";
-        }
-
-        private void SpinButton_Click(object sender, EventArgs e)
-        {
-            if (spinTimes < 2)
-            {
-                timer1.Start();
-                spinTimes++;
-                Timer = 0;
-            }
-
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(Timer < 4)
+            if(Timer < 4 )
             {
                 Timer++;
                 player.BonusPicture = random.getRand(9, 15);
                 pictureBox1.Image = Image.FromFile("Pictures/" + player.BonusPicture.ToString() + ".png");
-                SpinButton.Enabled = false;
+                ParadiseButton.Enabled = false;
             }
             else
             {
                 timer1.Stop();
-
-                if (spinTimes < 2)
-                {
-                    SpinButton.Enabled = true;
-                }
-                else
-                {
-                    SpinButton.Enabled = false;
-                }
-
+                Timer = 0;
                 ParadiseButton.Enabled = true;
             }
         }
@@ -67,6 +47,38 @@ namespace Proekt_test2_VP
             this.Hide();
             bonusSpins.ShowDialog();
             this.Close();
+        }
+
+        private void info_box_Click(object sender, EventArgs e)
+        {
+            InfoBox ib = new InfoBox(player);
+            //this.Hide();
+            ib.ShowDialog();
+            // this.Close();
+        }
+
+        private void RerollButton_Click(object sender, EventArgs e)
+        {
+            timer1.Start();
+            RerollButton.Enabled = false;
+        }
+
+        private void Scroll_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
+            }
         }
     }
 }

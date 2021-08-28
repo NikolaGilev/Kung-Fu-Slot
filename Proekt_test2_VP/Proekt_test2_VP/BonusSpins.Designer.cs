@@ -223,7 +223,7 @@ namespace Proekt_test2_VP
             this.BetAmountNumeric.DecimalPlaces = 1;
             this.BetAmountNumeric.Enabled = false;
             this.BetAmountNumeric.Location = new System.Drawing.Point(50, 560);
-            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(2);
+            this.BetAmountNumeric.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BetAmountNumeric.Minimum = new decimal(new int[] {
             1,
             0,
@@ -263,7 +263,7 @@ namespace Proekt_test2_VP
             this.musicImage.BackColor = System.Drawing.Color.Transparent;
             this.musicImage.Image = global::Proekt_test2_VP.Properties.Resources.mute;
             this.musicImage.Location = new System.Drawing.Point(720, 557);
-            this.musicImage.Margin = new System.Windows.Forms.Padding(2);
+            this.musicImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.musicImage.Name = "musicImage";
             this.musicImage.Size = new System.Drawing.Size(42, 32);
             this.musicImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -310,7 +310,7 @@ namespace Proekt_test2_VP
             this.info_box.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.info_box.Image = global::Proekt_test2_VP.Properties.Resources.info;
             this.info_box.Location = new System.Drawing.Point(729, 11);
-            this.info_box.Margin = new System.Windows.Forms.Padding(2);
+            this.info_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.info_box.Name = "info_box";
             this.info_box.Size = new System.Drawing.Size(33, 35);
             this.info_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -384,13 +384,16 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox13);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "BonusSpins";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BonusSpins";
             this.Load += new System.EventHandler(this.BonusSpins_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.BonusSpins_Paint);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BonusSpins_KeyDown);
             this.MouseEnter += new System.EventHandler(this.BonusSpins_MouseEnter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();

@@ -30,7 +30,7 @@ namespace Proekt_test2_VP
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.SpinButton = new System.Windows.Forms.Button();
+            this.RerollButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
@@ -40,15 +40,15 @@ namespace Proekt_test2_VP
             ((System.ComponentModel.ISupportInitialize)(this.info_box)).BeginInit();
             this.SuspendLayout();
             // 
-            // SpinButton
+            // RerollButton
             // 
-            this.SpinButton.Location = new System.Drawing.Point(326, 353);
-            this.SpinButton.Name = "SpinButton";
-            this.SpinButton.Size = new System.Drawing.Size(75, 23);
-            this.SpinButton.TabIndex = 8;
-            this.SpinButton.Text = "Spin";
-            this.SpinButton.UseVisualStyleBackColor = true;
-            this.SpinButton.Click += new System.EventHandler(this.SpinButton_Click);
+            this.RerollButton.Location = new System.Drawing.Point(326, 353);
+            this.RerollButton.Name = "RerollButton";
+            this.RerollButton.Size = new System.Drawing.Size(75, 23);
+            this.RerollButton.TabIndex = 8;
+            this.RerollButton.Text = "Reroll";
+            this.RerollButton.UseVisualStyleBackColor = true;
+            this.RerollButton.Click += new System.EventHandler(this.RerollButton_Click);
             // 
             // pictureBox1
             // 
@@ -107,6 +107,7 @@ namespace Proekt_test2_VP
             this.info_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.info_box.TabIndex = 25;
             this.info_box.TabStop = false;
+            this.info_box.Click += new System.EventHandler(this.info_box_Click);
             // 
             // Scroll
             // 
@@ -118,14 +119,17 @@ namespace Proekt_test2_VP
             this.Controls.Add(this.info_box);
             this.Controls.Add(this.ParadiseButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.SpinButton);
+            this.Controls.Add(this.RerollButton);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Scroll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scroll";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Scroll_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.info_box)).EndInit();
             this.ResumeLayout(false);
@@ -136,7 +140,7 @@ namespace Proekt_test2_VP
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button SpinButton;
+        private System.Windows.Forms.Button RerollButton;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ParadiseButton;

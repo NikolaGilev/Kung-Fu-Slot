@@ -26,53 +26,53 @@ namespace Proekt_test2_VP
 
         public double calculatePayout3(int Picture)
         {
-            if (Picture == 1) return Bet * 2;
+            if (Picture == 1) return Bet * 4;
 
-            if (Picture == 2) return Bet * 1.6;
+            if (Picture == 2) return Bet * 3.2;
 
-            if (Picture == 3) return Bet * 1.4;
+            if (Picture == 3) return Bet * 2.8;
                               
-            if (Picture == 4) return Bet * 1.2;
+            if (Picture == 4) return Bet * 2.4;
                               
-            if (Picture == 5) return Bet * 1;
+            if (Picture == 5) return Bet * 2;
                               
-            if (Picture == 6) return Bet * 0.8;
+            if (Picture == 6) return Bet * 1.6;
                               
-            if (Picture == 7) return Bet * 0.8;
+            if (Picture == 7) return Bet * 1.6;
             
-            return Bet * 1;
+            return Bet * 2;
         }
         public double calculatePayout4(int Picture)
         {
-            if (Picture == 1) return Bet * 10;
+            if (Picture == 1) return Bet * 20;
                               
-            if (Picture == 2) return Bet * 9;
+            if (Picture == 2) return Bet * 18;
                               
-            if (Picture == 3) return Bet * 8;
+            if (Picture == 3) return Bet * 16;
                               
-            if (Picture == 4) return Bet * 7.5;
+            if (Picture == 4) return Bet * 15;
                               
-            if (Picture == 5) return Bet * 7;
+            if (Picture == 5) return Bet * 14;
                               
-            if (Picture == 6) return Bet * 6;
+            if (Picture == 6) return Bet * 12;
                               
-            if (Picture == 7) return Bet * 6;
+            if (Picture == 7) return Bet * 12;
 
-            return Bet * 2;
+            return Bet * 4;
         }
         public double calculateBonusPayout(int occurances,int Picture)
         {
-            if (Picture == 9) return 10 * occurances;
+            if (Picture == 9) return 30 * occurances;
                                    
-            if (Picture == 10) return 11.5 * occurances;
+            if (Picture == 10) return 34.5 * occurances;
                                    
-            if (Picture == 11) return 12.5 * occurances;
+            if (Picture == 11) return 37.5 * occurances;
                                    
-            if (Picture == 12) return 15 * occurances;
+            if (Picture == 12) return 45 * occurances;
                                    
-            if (Picture == 13) return 17.5 * occurances;
+            if (Picture == 13) return 52.5 * occurances;
                                    
-            if (Picture == 14) return 20 * occurances;
+            if (Picture == 14) return 60 * occurances;
 
             return 0;
         }

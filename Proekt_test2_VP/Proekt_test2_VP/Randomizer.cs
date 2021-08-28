@@ -23,47 +23,47 @@ namespace Proekt_test2_VP
         {
             int i = getRand(min, max);
             // Total: 9 images...
-            // 25% chance to get 1.png
+            // 23% chance to get 1.png
             if (i < 25)
             {
                 i = 1;
             }
-            // 5% chance to get 2.png
+            // 4% chance to get 2.png
             else if (i < 30)
             {
                 i = 2;
             }
-            // 15% chance to get 3.png
+            // 14% chance to get 3.png
             else if (i < 35)
             {
                 i = 3;
             }
-            // 15% chance to get 4.png
+            // 14% chance to get 4.png
             else if (i < 50)
             {
                 i = 4;
             }
-            // 15% chance to get 5.png
+            // 14% chance to get 5.png
             else if (i < 65)
             {
                 i = 5;
             }
-            // 15% chance to get 6.png
+            // 14% chance to get 6.png
             else if (i < 80)
             {
                 i = 6;
             }
-            // 10% chance to get 7.png
+            // 9% chance to get 7.png
             else if (i < 90)
             {
                 i = 7;
             }
-            // 10% chance to get 8.png
+            // 9% chance to get 8.png
             else if (i < 100)
             {
                 i = 8;
             }
-            // 5% chance to get bonus picture
+            // 4% chance to get bonus picture
             else if (i < 105)
             {
                 i = 9;
