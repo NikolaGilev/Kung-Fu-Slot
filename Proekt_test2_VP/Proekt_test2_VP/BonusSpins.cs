@@ -597,18 +597,22 @@ namespace Proekt_test2_VP
             // this.Close();
         }
 
-        private void BonusSpins_FormClosed(object sender, FormClosedEventArgs e)
+        private void BonusSpins_KeyDown(object sender, KeyEventArgs e)
         {
-            if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (e.KeyCode == Keys.Escape)
             {
-                Menu menu = new Menu();
-                this.Hide();
-                menu.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                this.Close();
+                if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    musicPlayer.controls.pause();
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
     }

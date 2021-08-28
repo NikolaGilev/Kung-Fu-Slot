@@ -63,18 +63,21 @@ namespace Proekt_test2_VP
             RerollButton.Enabled = false;
         }
 
-        private void Scroll_FormClosed(object sender, FormClosedEventArgs e)
+        private void Scroll_KeyDown(object sender, KeyEventArgs e)
         {
-            if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (e.KeyCode == Keys.Escape)
             {
-                Menu menu = new Menu();
-                this.Hide();
-                menu.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                this.Close();
+                if (MessageBox.Show("Go Back To Main Menu?", "Ending Session", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Menu menu = new Menu();
+                    this.Hide();
+                    menu.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
         }
     }
